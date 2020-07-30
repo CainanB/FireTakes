@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcryptjs');
-const db = require('./models');
+// const db = require('./models');
 
 
 app.set('view engine', 'ejs')
@@ -19,7 +19,7 @@ app.use(session({
 }))
 
 //routes
-app.use(require('./routes/admin'))
+// app.use(require('./routes/admin'))
 app.use(require('./routes/index'))
 app.use(require('./routes/login'))
 
