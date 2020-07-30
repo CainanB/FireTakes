@@ -1,6 +1,5 @@
 
-/*style page*/
-
+/* styles page */
 
 *{
     margin:0px;
@@ -10,7 +9,11 @@
 header {
     font-size: 2rem;
 }
-  
+
+/* using artspeakers format for jumbotron 
+    might switch this to a carosel of trending albums
+*/
+
 header .jumbotron {
     height: 45vh;
     margin-bottom: 0;
@@ -20,6 +23,8 @@ header .jumbotron {
     -o-background-size: cover;
     background-size: cover;
     background-position-y: -200px;
+    /* parallax effect */
+    /* background-attachment: fixed; */
 }
 
 .container-fluid{
@@ -27,40 +32,40 @@ header .jumbotron {
     padding-right: 0;
 }
 
-/**  Navbar **/
-  
-  header .navbar-default {
-    border: none;
-    border-radius: 0;
-    padding: 10px 0;
-  }
-  
-  .navbar-inverse {
-    border: 0;
-  }
-  
-  header .navbar-brand {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.3em;
-    font-weight: 300;
-  }
-  
-  header .navbar-inverse .navbar-brand {
-    color: white;
-  }
-  
-  header .navbar-inverse .navbar-nav>li>a {
-    color: white;
-  } 
+/* nav */
 
-  a{
-    color:white;
-  }
+header .navbar-default {
+border: none;
+border-radius: 0;
+padding: 10px 0;
+}
 
-  .nav-link{
-    padding-left: 0;
-  }
+.navbar-inverse {
+border: 0;
+}
 
-  a:hover{
-    color:gray;
-  }
+header .navbar-brand {
+font-family: 'Roboto', sans-serif;
+font-size: 1.3em;
+font-weight: 300;
+}
+
+header .navbar-inverse .navbar-brand {
+color: white;
+}
+
+header .navbar-inverse .navbar-nav>li>a {
+color: white;
+} 
+
+a{
+color:white;
+}
+
+.nav-link{
+padding-left: 0;
+}
+
+a:hover{
+color:gray;
+}
