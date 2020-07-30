@@ -1,4 +1,16 @@
 
+/* to handle extra small devices like ipod nano */
+
+@media (max-width: 288px)
+{
+   html { font-size:0.4em; }
+}
+
+@media (min-width: 289px) and (max-width: 414px)
+{
+   html { font-size:0.7em; }
+}
+
 /* styles page */
 
 *{
@@ -7,11 +19,11 @@
 }
 
 header {
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 /* using artspeakers format for jumbotron 
-    might switch this to a carosel of trending albums
+    might switch this to a carousel of trending albums
 */
 
 header .jumbotron {
@@ -58,14 +70,19 @@ header .navbar-inverse .navbar-nav>li>a {
 color: white;
 } 
 
+i{
+    color:rgb(255, 11, 11);
+}
+
 a{
-color:white;
+    color:gray;
+    padding: 0px;
 }
 
 .nav-link{
-padding-left: 0;
+    padding: 0px;
 }
 
 a:hover{
-color:gray;
+color:white;
 }
