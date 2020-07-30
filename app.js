@@ -24,7 +24,6 @@ app.use(require('./routes/index'))
 app.use(require('./routes/login'))
 
 
-
 app.listen(3000, () => {
     console.log(`listening on port 3000`);
 })
