@@ -4,6 +4,63 @@
 
 *{
     margin:0px;
-    padding:0px;
     box-sizing: border-box;
 }
+
+header {
+    font-size: 2rem;
+}
+  
+header .jumbotron {
+    height: 45vh;
+    margin-bottom: 0;
+    background: url(../images/jumbotron2.jpg) no-repeat 100% 5%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position-y: -200px;
+}
+
+.container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/**  Navbar **/
+  
+  header .navbar-default {
+    border: none;
+    border-radius: 0;
+    padding: 10px 0;
+  }
+  
+  .navbar-inverse {
+    border: 0;
+  }
+  
+  header .navbar-brand {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3em;
+    font-weight: 300;
+  }
+  
+  header .navbar-inverse .navbar-brand {
+    color: white;
+  }
+  
+  header .navbar-inverse .navbar-nav>li>a {
+    color: white;
+  } 
+
+  a{
+    color:white;
+  }
+
+  .nav-link{
+    padding-left: 0;
+  }
+
+  a:hover{
+    color:gray;
+  }
