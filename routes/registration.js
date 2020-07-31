@@ -15,6 +15,7 @@ router.post('/registration', (req, res) => {
         password: passwordEncrypted
     })
     .then(user =>{
+        console.log("user registered!")
         res.redirect('/')
     })
     .catch(error =>{

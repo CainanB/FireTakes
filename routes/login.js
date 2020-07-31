@@ -18,10 +18,12 @@ router.post('/login', async (req, res) => {
         // results is an array of objects from db
         if (results.length > 0) {
 
-            bcrypt.compare(password, results[0].password, (err, res)=>{
+            bcrypt.compare(password, results[0].password, (err, response)=>{
 
                 if (response) {
-                    req.session.username = username,
+                    console.log("it worked!")
+                    req.session.username = username
+                    console.log(req.session.username)
                     res.redirect('/')
                 }
                 else {
