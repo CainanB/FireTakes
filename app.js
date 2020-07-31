@@ -20,7 +20,7 @@ app.use(session({
 }))
 
 //routes
-//app.use(require('./routes/admin'))
+
 app.use(require('./routes/index'))
 app.use(require('./routes/login'))
 app.use(require('./routes/albums'))
