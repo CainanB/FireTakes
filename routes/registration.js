@@ -3,11 +3,10 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const db = require('../models');
 
-
-
 router.post('/registration', (req, res) => {
     let username = req.body.username;
     let password = req.body.password;
+    console.log(username, password);
 
     let passwordEncrypted = bcrypt.hashSync(password, 8)
 
@@ -16,7 +15,7 @@ router.post('/registration', (req, res) => {
         password: passwordEncrypted
     })
     .then(user =>{
-        res.redirect('/login')
+        res.redirect('/')
     })
     .catch(error =>{
         console.log(error)
