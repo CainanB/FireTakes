@@ -2,6 +2,9 @@
 //const APIkeys = require('../../config/keys')
 // import APIkeys from './'
 $(()=>{
+    // GLOBAL VARIABLES
+    var input = document.getElementById('searchField');
+
     // ADD API KEYS OBJECT HERE
     const APIkeys = {
         clientId :'ae832ccdace94d20be0eac537ebc0e65',
@@ -29,32 +32,47 @@ $(()=>{
     }
     
     // FUNCTION TO FETCH TOP 10 ARTIST RESULTS
-    const getArtists = async (artist) => {
+    const getAlbums = async (album) => {
        
-    const result = await fetch(`https://api.spotify.com/v1/search?q=${artist}&type=artist&limit=10&offset=0&include_external=audio `, {
+    const result = await fetch(`https://api.spotify.com/v1/search?q=album%3A${album}&type=album&limit=10&offset=0&include_external=audio`, {
         method: 'GET',
         headers: { 'Authorization' : 'Bearer ' + await getToken()}
     });
     
     const data = await result.json();
-    console.log(data.artists.items);
-    
-    return data.artists.items
+    //console.log(data.albums);
+    return data.albums.items;
+    //return data.artists.items
     
     
     }
+
+    const getTracks = async (albumID) => {
+       
+        const result = await fetch(`https://api.spotify.com/v1/albums/${albumID}/tracks`, {
+            method: 'GET',
+            headers: { 'Authorization' : 'Bearer ' + await getToken()}
+        });
+        
+        const data = await result.json();
+        //console.log(data);
+        //return data.albums.items;
+        return data
+        
+        
+        }
     
     // FETCH TOP ALBUM DATA FROM SPECIFIC ARTIST
-    const getAlbums = async (artistID) => {
-    const result = await fetch(`https://api.spotify.com/v1/artists/${artistID}/albums?market=ES&limit=10&offset=0`, {
-        method: 'GET',
-        headers: { 'Authorization' : 'Bearer ' + await getToken()}
-    });
+    // const getAlbums = async (artistID) => {
+    // const result = await fetch(`https://api.spotify.com/v1/artists/${artistID}/albums?market=ES&limit=10&offset=0`, {
+    //     method: 'GET',
+    //     headers: { 'Authorization' : 'Bearer ' + await getToken()}
+    // });
     
-    const albumData = await result.json();
-    return albumData.items;
+    // const albumData = await result.json();
+    // return albumData.items;
     
-    }
+    // }
     
     
     
@@ -66,16 +84,19 @@ $(()=>{
         $("#artistName").html("");
         $("#imgs").html("");
         $('#albumsInfo').html("");
+        $("#albumTracksList").html("");
+        $("#albumTracks h2").remove();
         
-        let input = document.getElementById('searchField');
-        let patt = new RegExp(`^${input.value.toUpperCase()}`);
         if(input.value.length >= 3){
-            var artists = await getArtists(input.value)
-            for (let artist of artists) {
-                $("#nameList").append(`<li id="${artist.name}">${artist.name}</li>`)
+            let albums = await getAlbums(input.value);
+            console.log(albums);
+            for(let album of albums){
+                console.log(album.artists[0].name, album.name);
+                $("#nameList").append(`<li id="${album.id}"><img id="${album.id}"height="50px" src="${album.images[2].url}">${album.name}, By ${album.artists[0].name}</li>`)
                  
-              } 
+            }
         }
+     
         
     
         
@@ -86,27 +107,59 @@ $(()=>{
       // TO GRAB ALBUMS DATA THEN EXTRACTS ALBUM NAME AND COVER IMAGE
      $("#nameList").click(async(e)=>{
         $("#nameList").html("");
-         
-            let artists = await getArtists(e.target.id);
-            let artistName = artists[0].name;
-            let artistID = artists[0].id;
-            let albums = await getAlbums(artistID);
-            console.log(albums);
-            // console.log(artists[0].images[0]);
-            for(let album of albums){
-                $('#albumsInfo').append(`
-                <h3>${album.name}</h3>
-                <img src="${album.images[1].url}">
-                `)
-            }
-            $('#artistName').append(`<h1>${artistName}</h1>`)
+        input.value = "";
+         console.log(e.target.id);
+         let albumTracks = await getTracks(e.target.id);
+         console.log(albumTracks);
+         $(`<h2>Track List</h2>`).insertBefore("#albumTracksList")
+         for(let track of albumTracks.items){
+             $('#albumTracksList').append(`
+             <audio id="${track.preview_url}playPauseButtonplayer">
+            <source src="${track.preview_url}" type="audio/mpeg">
+            </audio>
+             <li><i id="${track.preview_url}playPauseButton" class="${track.preview_url} fa fa-play-circle" aria-hidden="true"></i>  ${track.name}, ${track.artists[0].name}</li>
+             `)
+         }
+            // let artists = await getArtists(e.target.id);
+            // let artistName = artists[0].name;
+            // let artistID = artists[0].id;
+            // let albums = await getAlbums(artistID);
+            // console.log(albums);
+            // // console.log(artists[0].images[0]);
+            // for(let album of albums){
+            //     $('#albumsInfo').append(`
+            //     <h3>${album.name}</h3>
+            //     <img src="${album.images[1].url}">
+            //     `)
+            // }
+            // $('#artistName').append(`<h1>${artistName}</h1>`)
              
-            let currentImageURL = artists[0].images[1].url;
-                $('#imgs').append(`<img src="${currentImageURL}">`)
+            // let currentImageURL = artists[0].images[1].url;
+            //     $('#imgs').append(`<img src="${currentImageURL}">`)
             
         
         
      }) 
+
+     $("#albumTracksList").click((e)=>{
+         console.log(e.target.id);
+         let musicButton = document.getElementById(`${e.target.id}`)
+         if(musicButton.classList.contains("fa-play-circle")){
+            document.getElementById(`${e.target.id}player`).play();
+            musicButton.classList.remove("fa-play-circle");
+            musicButton.classList.add("fa-pause");
+        }else{
+            document.getElementById(`${e.target.id}player`).pause();
+            musicButton.classList.remove("fa-pause");
+            musicButton.classList.add("fa-play-circle");
+        }
+
+
+
+        //  $(`#${e.target.id}player`).play();
+        // console.log(document.getElementById(`${e.target.id}player`));
+         
+     })
     
     
     
