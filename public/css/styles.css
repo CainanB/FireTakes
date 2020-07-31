@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+
+/* to handle extra small devices like ipod nano lol*/
+
+@media (max-width: 288px)
+{
+   html { font-size:0.4em; }
+}
+
+@media (min-width: 289px) and (max-width: 414px)
+{
+   html { font-size:0.7em; }
+}
+
+/* styles page */
+
+*{
+    margin:0px;
+    box-sizing: border-box;
+    transition-property: all;
+    transition-duration: .6s;
+    transition-timing-function: ease;
+}
+
+
+body{
+    font-family: 'Rubik', sans-serif;
+}
+
+header {
+    font-size: 1.8rem;
+}
+
+/* using artspeakers format for jumbotron 
+    might switch this to a carousel of trending albums
+*/
+
+header .jumbotron {
+    height: 45vh;
+    margin-bottom: 0;
+    background: url(../images/jumbotron2.jpg) no-repeat 100% 5%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position-y: -200px;
+    /* parallax effect */
+    /* background-attachment: fixed; */
+}
+
+.container-fluid{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* nav */
+
+header .navbar-default {
+    border: none;
+    border-radius: 0;
+    padding: 10px 0;
+}
+
+.navbar-inverse {
+    border: 0;
+}
+
+header .navbar-brand {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3em;
+    font-weight: 300;
+}
+
+header .navbar-inverse .navbar-brand {
+    color: white;
+}
+
+header .navbar-inverse .navbar-nav>li>a {
+    color: white;
+} 
+
+i{
+    color:rgb(255, 11, 11);
+}
+
+a{
+    color:gray;
+    padding: 0px;
+}
+
+a:hover{
+    color:white;
+}
+
+.nav-link{
+    padding: 0px;
+}
+
+
+/* simple animations */
+.threed:hover
+{
+    box-shadow:
+        1px 1px rgb(255, 11, 11),
+        2px 2px rgb(255, 11, 11),
+        3px 3px rgb(255, 11, 11);
+
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px);
+}
+

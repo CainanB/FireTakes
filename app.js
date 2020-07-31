@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcryptjs');
-const db = require('./models');
+// const db = require('./models');
 
 
 
@@ -19,12 +19,9 @@ app.use(session({
     cookie: {secure: false, maxAge: 14*24*60*60*1000}
 }))
 
-//routes
-
 app.use(require('./routes/index'))
 app.use(require('./routes/login'))
 app.use(require('./routes/albums'))
-
 
 
 app.listen(3000, () => {
