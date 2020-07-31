@@ -11,6 +11,7 @@ const bcrypt = require('bcryptjs');
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.use(session({
     secret: 'cat',
@@ -24,6 +25,7 @@ app.use(require('./routes/albums'))
 app.use(require('./routes/artists'))
 // app.use(require('./routes/profile'))
 // app.use(require('./routes/review'))
+app.use(require('./routes/registration'))
 
 
 app.listen(3000, () => {
