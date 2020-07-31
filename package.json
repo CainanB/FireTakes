@@ -26,6 +26,7 @@
     "express-session": "^1.17.1",
     "pg": "^8.3.0",
     "pg-hstore": "^2.3.3",
-    "sequelize": "^6.3.3"
+    "sequelize": "^6.3.3",
+    "spotify-web-api-js": "^1.4.0"
   }
 }
