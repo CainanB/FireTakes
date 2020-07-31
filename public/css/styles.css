@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
 
-/* to handle extra small devices like ipod nano lol*/
+/* font-size response */
 
 @media (max-width: 288px)
 {
-   html { font-size:0.4em; }
+    html { font-size:0.4em; }
 }
 
 @media (min-width: 289px) and (max-width: 414px)
 {
-   html { font-size:0.7em; }
+    html { font-size:0.7em; }
 }
 
 @media (min-width: 415px) and (max-width: 991px)
 {
-   html { font-size:0.9em; }
+    html { font-size:0.9em; }
 }
 
 @media (min-width: 992px) and (max-width: 1199px)
@@ -26,13 +26,13 @@
     html {font-size:1.3em;}    
 }
 
-/* styles page */
+/* styling */
 
 *{
     margin:0px;
     box-sizing: border-box;
     transition-property: all;
-    transition-duration: .6s;
+    transition-duration: .5s;
     transition-timing-function: ease;
 }
 
@@ -44,24 +44,6 @@ body{
 header {
     font-size: 1.8rem;
 }
-
-/* using artspeakers format for jumbotron 
-    might switch this to a carousel of trending albums
-*/
-
-/* header .jumbotron {
-    height: 45vh;
-    margin-bottom: 0;
-
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-position-y: -200px;
-    parallax effect
-    background: url(../images/jumbotron2.jpg) no-repeat 100% 5%;
-    background-attachment: fixed;
-} */
 
 .container-fluid{
     padding-left: 0;
@@ -84,27 +66,24 @@ header .navbar-brand {
     font-family: 'Roboto', sans-serif;
     font-size: 1.3em;
     font-weight: 300;
+    color: orange;
 }
 
-header .navbar-inverse .navbar-brand {
-    color: white;
+.navbar-dark .navbar-nav .nav-link {
+    color: #fec89a;
 }
 
-header .navbar-inverse .navbar-nav>li>a {
-    color: white;
-} 
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: orange;
+}
 
 i{
     color:rgb(255, 11, 11);
 }
 
 a{
-    color:gray;
+    color:#fec89a;
     padding: 0px;
-}
-
-a:hover{
-    color:white;
 }
 
 .nav-link{
@@ -112,8 +91,30 @@ a:hover{
 }
 
 /* simple animations */
-.threed:hover
+.nav-link:hover
 {
+    box-shadow:
+        1px 1px rgb(255, 11, 11),
+        2px 2px rgb(255, 11, 11),
+        3px 3px rgb(255, 11, 11);
+
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px);
+    color: orange;
+}
+
+.custom-toggler.navbar-toggler {
+    border-color: orange;
+  } 
+.custom-toggler.navbar-toggler-icon {
+    color: orange;
+  } 
+
+.navbar-dark .custom-toggler .collapzoid:hover{
+    color:pink;
+}
+
+.threed:hover{
     box-shadow:
         1px 1px rgb(255, 11, 11),
         2px 2px rgb(255, 11, 11),
@@ -136,15 +137,18 @@ li{
 }
 
 .title:hover{
-    background-color:#ffe3e0;
+    background-color:#fec89a;
 }
 
 .search:hover{
-    background-color:#ffe3e0;
+    background-color:#fec89a;
 }
 
 .row{
     margin-left: 0;
     margin-right: 0;
 }
-
+/* 
+.logo{
+    color: orange;
+} */

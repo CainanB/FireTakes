@@ -5,7 +5,7 @@ router.get('/artists',(req,res) => {
     res.render('artists', {
         pageID: "Artists"
     });
-})
+});
 
 
 module.exports = router;
