@@ -26,6 +26,7 @@ app.use(require('./routes/artists'))
 // app.use(require('./routes/profile'))
 // app.use(require('./routes/review'))
 app.use(require('./routes/registration'))
+app.use(require('./routes/login'))
 
 
 app.listen(3000, () => {
