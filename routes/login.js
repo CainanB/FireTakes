@@ -5,8 +5,8 @@ const db = require('../models')
 
 
 router.get('/login',(req,res) => {
-    res.render("login")
-});
+    res.send('login');
+})
 
 router.post('/login', async (req, res) => {
     
