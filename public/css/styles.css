@@ -39,6 +39,7 @@
 
 body{
     font-family: 'Rubik', sans-serif;
+
 }
 
 header {
@@ -138,7 +139,9 @@ li{
 
 .title:hover{
     background-color:#fec89a;
+    color:orangered;
 }
+
 
 .search:hover{
     background-color:#fec89a;
