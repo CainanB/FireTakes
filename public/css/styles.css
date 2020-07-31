@@ -12,6 +12,20 @@
    html { font-size:0.7em; }
 }
 
+@media (min-width: 415px) and (max-width: 991px)
+{
+   html { font-size:0.9em; }
+}
+
+@media (min-width: 992px) and (max-width: 1199px)
+{ 
+    html {font-size:1.1em;}
+}
+
+@media (min-width: 1200px) {  
+    html {font-size:1.3em;}    
+}
+
 /* styles page */
 
 *{
