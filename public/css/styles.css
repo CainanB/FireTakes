@@ -35,18 +35,19 @@ header {
     might switch this to a carousel of trending albums
 */
 
-header .jumbotron {
+/* header .jumbotron {
     height: 45vh;
     margin-bottom: 0;
-    background: url(../images/jumbotron2.jpg) no-repeat 100% 5%;
+
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     background-position-y: -200px;
-    /* parallax effect */
-    /* background-attachment: fixed; */
-}
+    parallax effect
+    background: url(../images/jumbotron2.jpg) no-repeat 100% 5%;
+    background-attachment: fixed;
+} */
 
 .container-fluid{
     padding-left: 0;
@@ -96,7 +97,6 @@ a:hover{
     padding: 0px;
 }
 
-
 /* simple animations */
 .threed:hover
 {
@@ -107,5 +107,30 @@ a:hover{
 
     -webkit-transform: translateX(-3px);
     transform: translateX(-3px);
+}
+
+ul{
+    list-style-type: none;   
+}
+
+li{
+    cursor: pointer;
+}
+
+#nameList>li:hover{
+    color:rgb(255, 11, 11);
+}
+
+.title:hover{
+    background-color:#ffe3e0;
+}
+
+.search:hover{
+    background-color:#ffe3e0;
+}
+
+.row{
+    margin-left: 0;
+    margin-right: 0;
 }
 
