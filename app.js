@@ -22,6 +22,7 @@ app.use(session({
 app.use(require('./routes/index'))
 app.use(require('./routes/login'))
 app.use(require('./routes/albums'))
+app.use(require('./routes/registration'))
 
 
 app.listen(3000, () => {
