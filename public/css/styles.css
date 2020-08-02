@@ -9,12 +9,12 @@
 
 @media (min-width: 289px) and (max-width: 414px)
 {
-    html { font-size:0.7em; }
+    html { font-size:0.6em; }
 }
 
 @media (min-width: 415px) and (max-width: 991px)
 {
-    html { font-size:0.9em; }
+    html { font-size:0.8em; }
 }
 
 @media (min-width: 992px) and (max-width: 1199px)
@@ -244,6 +244,10 @@ blockquote {
 .row{
     margin-left: 0;
     margin-right: 0;
+}
+
+#albumTracksList{
+    padding-left: 3px;
 }
 
 /* 

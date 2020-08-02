@@ -112,7 +112,7 @@ $(()=>{
          console.log(e.target.id);
          let albumTracks = await getTracks(e.target.id);
          console.log(albumTracks);
-         $(`<h2>Track List</h2>`).insertBefore("#albumTracksList")
+         $(`<h2>Tracks</h2>`).insertBefore("#albumTracksList")
          for(let track of albumTracks.items){
              $('#albumTracksList').append(`
              <audio id="${track.preview_url}playPauseButtonplayer">
