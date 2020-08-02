@@ -7,8 +7,8 @@ $(()=>{
 
     // ADD API KEYS OBJECT HERE
     const APIkeys = {
-        clientId :'ae832ccdace94d20be0eac537ebc0e65',
-        clientSecret : '441260540fa0411ba35e5cd586053bca'
+        clientId :'73189585c28c4d4e93e7db8ec63f156f',
+        clientSecret : 'a2e470f4466f4f9889aa510a35e55f12'
     }
     
 
@@ -88,7 +88,7 @@ $(()=>{
         $("#albumTracksList").html("");
         $("#albumTracks h2").remove();
         
-        if(input.value.length >= 3){
+        if(input.value.length >= 1){
             let albums = await getAlbums(input.value);
             console.log(albums);
             for(let album of albums){
@@ -121,6 +121,7 @@ $(()=>{
              <li><i id="${track.preview_url}playPauseButton" class="${track.preview_url} fa fa-play-circle" aria-hidden="true"></i>  ${track.name}, ${track.artists[0].name}</li>
              `)
          }
+
             // let artists = await getArtists(e.target.id);
             // let artistName = artists[0].name;
             // let artistID = artists[0].id;

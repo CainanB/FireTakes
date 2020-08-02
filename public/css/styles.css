@@ -87,6 +87,19 @@ a{
     padding: 0px;
 }
 
+a:hover{
+    text-decoration: none;
+}
+
+.titleSwap{
+    color:black;
+}
+
+.titleSwap:hover{
+    color:orange;
+    font-size: 70px;
+}
+
 .nav-link{
     padding: 0px;
 }
@@ -137,8 +150,12 @@ li{
     color:rgb(255, 11, 11);
 }
 
+.profileLink:hover{
+    color:rgb(255, 11, 11);
+}
+
 .title:hover{
-    background-color:#fec89a;
+    /* background-color:#fec89a; */
     color:orangered;
 }
 
@@ -151,6 +168,7 @@ li{
     margin-left: 0;
     margin-right: 0;
 }
+
 /* 
 .logo{
     color: orange;
