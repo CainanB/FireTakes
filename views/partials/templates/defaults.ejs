@@ -9,6 +9,6 @@
 <!-- add any public JS files you want to use here -->
 <!-- add constaints like we did in the artspeakers so that the JS is only loaded on the pages that need it -->
 
-<% if (pageID == "Albums") { %>
+<% if (pageID == "Albums" || pageID == "My Profile") { %>
     <script type="module" src="/js/albums.js" type="text/javascript"></script>
 <% } %>
