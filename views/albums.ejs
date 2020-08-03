@@ -13,7 +13,7 @@
 
         <div class="row pt-3 pb-3 pr-0 title">
             <div class="col pr-0 d-flex justify-content-center">
-               <h1 style="font-family: monospace;">Search by album</h1>
+               <h1 style="font-family: monospace;">Search for Album by Artist</h1>
             </div>
         </div>
 
@@ -21,11 +21,9 @@
 
     </div>
     
-    <div id="albumTracks">
+    
         
-        <ul id="albumTracksList">
-
-        </ul>
+        
             <div class="col-2 col-lg"></div>
             <div class="col pt-2 pr-0">
                 <form class="form-inline d-flex justify-content-start align-items-center md-form form-sm">
@@ -36,26 +34,31 @@
                 <ul id="nameList">
     
                 </ul>
+                <ul id="albumList">
+
+                </ul>
+
+                <div id="albumTracks">
+                    <ul id="albumTracksList">
+
+                    </ul>
+
+                </div>
+               
+                <div id="embedPlayer">
+                    
+                </div>
 
             </div>
             <div class="col-lg"></div>
 
-        </div>
+        
 
-        <div id="artistName">
-    
-        </div>
-    
-        <div id="imgs">
-    
-        </div>
-    
-        <div id="albumsInfo">
-    
-        </div>
 
     </div> <!-- end of container fluid -->
 
+
+    
     <%- include('partials/templates/defaults.ejs')  %> 
 
 </body>
