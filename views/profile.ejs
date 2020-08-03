@@ -43,7 +43,9 @@
             </div>
             <hr>
             <% myreviews.forEach(review => { %>
-                <div> <%= review %>  </div>
+                <div> <%= review.text %>  </div>
+                <div> <%= review.albumID %>  </div>
+                <div> <%= review.stars %>  </div>
             <% }) %>
             <div class="row">
                 <h1 class="ml-2">Rodeo</h1>
