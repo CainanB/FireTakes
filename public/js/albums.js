@@ -1,5 +1,6 @@
 
-//const APIkeys = require('../../config/keys')
+// const APIkeys = require('../../config/keys')
+// console.log(APIkeys)
 // import APIkeys from './'
 $(()=>{
     // GLOBAL VARIABLES
@@ -7,8 +8,8 @@ $(()=>{
 
     // ADD API KEYS OBJECT HERE
     const APIkeys = {
-        clientId :'ae832ccdace94d20be0eac537ebc0e65',
-        clientSecret : '441260540fa0411ba35e5cd586053bca'
+        clientId :'73189585c28c4d4e93e7db8ec63f156f',
+        clientSecret : 'a2e470f4466f4f9889aa510a35e55f12'
     }
     
 

@@ -5,7 +5,9 @@ const db = require('../models')
 
 
 router.get('/login',(req,res) => {
-    res.send('login');
+    res.render('login', {
+        pageID: "Login"
+    });
 })
 
 router.post('/login', async (req, res) => {
