@@ -59,7 +59,7 @@
 
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <a class="navbar-brand threed pr-1" href="/" style="color:orange;">Fire Takes</a>
+        <a class="navbar-brand threed pr-1 FTSWAP" href="/" style="color:orange;"> <img src="../../../images/FireAlone.png" class="mb-3" alt="fireTakesLogo" style="height:48px;width:48px;"></a>
         <button class="custom-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"  style="color:orange;">
           <span class="collapzoid"><i class="fa fa-arrow-circle-down" aria-hidden="true" style="color:orange;"></i></span>
         </button>
@@ -68,7 +68,7 @@
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
                 <div class="row ml-3 mr-2 my-2 align-items-center justify-content-center">
-                    <a class="nav-link ml-1 pr-1 threed" href="/profile" style="font-size:1.4rem;"><i class="fa fa-home mr-2" aria-hidden="true"></i>Profile <span class="sr-only">(current)</span></a>
+                    <a class="nav-link ml-1 pr-1 threed" href="/profile" style="font-size:1.4rem;"><i class="fa fa-user-circle-o mr-2" aria-hidden="true"></i>Profile <span class="sr-only">(current)</span></a>
                 </div>
             </li>
             <li class="nav-item ">
@@ -85,7 +85,7 @@
 
           <div class="row ml-3 mr-2 my-2 align-items-center justify-content-center">
             <span class="nav-item">
-                <a class="nav-link ml-1 pr-1" href="/login" style="font-size: 20px;"><i class="fa fa-sign-in mr-2" aria-hidden="true"></i>Log In</a>
+                <a class="nav-link ml-1 pr-1" data-toggle="modal" data-target="#exampleModalCenter" href="#" style="font-size: 20px;"><i class="fa fa-sign-in mr-2" aria-hidden="true"></i>Log In</a>
             </span>
           </div>
 
@@ -100,4 +100,34 @@
     </nav>
 
 </header>
+
+<!-- Log In Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Log in</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form action="/login"  method="POST">
+                <div class="form-group">
+                  <label for="username" class="col-form-label">Username</label>
+                  <input type="text" class="form-control" id="usernameLogin" name="username">
+                </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Password</label>
+                  <input type="password" class="form-control" id="passwordLogin" name="password">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-success">Log In</button>
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
 

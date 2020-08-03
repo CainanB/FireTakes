@@ -3,24 +3,30 @@
   <head>
     <%- include('partials/templates/head.ejs')  %> 
   </head>
-  <body>
+  <body style="background-color: #e5e5e5;">
 
     <div class="container-fluid">
 
       <%- include('partials/content/header.ejs')  %> 
 
-
       <div class="row pt-3 pb-3 pr-0 title">
 
-        <div class="col-4 pr-0 d-flex justify-content-start">
-          <h1 style="font-family: 'Courier New', Courier, monospace;"><span style="color:orangered;">Fire<span style="color:orange"> Takes</span></span></h1>
+        <div class="col-2"></div>
+
+        <div class="col">
+          <div class="row w-100 justify-content-center">
+            <img src="../../../images/FireAlone.png" alt="fireTakesLogo" style="height:48px;width:48px;">
+            <h1 style="font-family: 'Courier New', Courier, monospace;text-align: center;"><span style="color:orangered;"> Fire</span><span style="color:orange"> Takes</span></h1>
+          </div>
+          <div class="row w-100 justify-content-center">
+            <h1 style="font-family: 'Courier New', Courier, monospace;text-align: center;">one stop music talk</h1>
+          </div>
+         
+            <!-- <b style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">==></b> -->
+
         </div>
-        <div class="col-2 pr-0 d-flex justify-content-start">
-          <h1><b style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">==></b></h1>
-        </div>
-        <div class="col-6 pr-0 d-flex justify-content-start">
-          <h1 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">one stop music talk</h1>
-        </div>
+
+        <div class="col-2"></div>
 
       </div>
 
@@ -65,10 +71,35 @@
 
       </div>
 
+      <!-- REGISTRATION SECTION -->
+
       <div class="row">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Register</button>
+        <div class="col-2"></div>
+        <div class="col questions">
+          <h3 class="duh mt-5 mb-2" style="text-align: left;">Think others will care about your opinion? </h3>
+          <h3 class="yes mt-4 mb-2" style="text-align: left;">Want to share your music knowledge? </h3>
+          <h3 class="pls mt-4 mb-2" style="text-align: left;">Register an account with us </h3>
+
+        </div>
+        <!-- <div class="col-2"></div> -->
       </div>
 
+      <div class="row">
+        <div class="col-2"></div>
+        <div class="col d-flex justify-content-center">
+          <button type="button" class="reg btn btn-lg btn-danger mt-5 mb-3" data-toggle="modal" data-target="#exampleModal">Register</button>
+        </div>
+        <div class="col-2"></div>
+      </div>
+
+
+      <footer>
+
+        <div class="row mb-3 justify-content-center mt-5" style="font-size: 16px;">
+          2020 All rights reserved. By Cainan Barboza, Dan Gelok and Micah Peterson
+        </div>
+
+      </footer>
 
     </div> <!-- end container fluid -->
 
@@ -83,7 +114,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <form>
+            <form action="/registration"  method="POST">
               <div class="form-group">
                 <label for="recipient-name" class="col-form-label">Username</label>
                 <input type="text" class="form-control" id="username" name="username">
@@ -94,13 +125,13 @@
               </div>
               <div class="form-group">
                 <label for="message-text" class="col-form-label">Confirm Password</label>
-                <input type="password" class="form-control" id="passwordConfirm" name="password">
+                <input type="password" class="form-control" id="passwordConfirm">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Register</button>
               </div>
             </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Register</button>
           </div>
         </div>
       </div>

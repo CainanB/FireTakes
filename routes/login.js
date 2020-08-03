@@ -25,7 +25,7 @@ router.post('/login', async (req, res) => {
                 if (response) {
                     console.log("it worked!")
                     req.session.username = username
-                    console.log(req.session.username)
+                    console.log(`Session username: ${req.session.username}`)
                     res.redirect('/')
                 }
                 else {
