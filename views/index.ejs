@@ -1,17 +1,17 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <%- include('partials/templates/head.ejs')  %> 
+    <%- include('partials/templates/head.ejs')  %>
   </head>
   <body style="background-color: #e5e5e5;">
 
     <div class="container-fluid">
 
-      <%- include('partials/content/header.ejs')  %> 
+      <%- include('partials/content/header.ejs')  %>
 
       <div class="row pt-3 pb-3 pr-0 title">
 
-        <div class="col-2"></div>
+        <!-- <div class="col-2"></div> -->
 
         <div class="col">
           <div class="row w-100 justify-content-center">
@@ -26,15 +26,15 @@
 
         </div>
 
-        <div class="col-2"></div>
+        <!-- <div class="col-2"></div> -->
 
       </div>
 
       <div class="row">
 
-        <div class="col-2">
+        <!-- <div class="col-2">
           
-        </div>
+        </div> -->
 
         <div class="col d-flex justify-content-center">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -65,9 +65,9 @@
             </div>
         </div>
 
-        <div class="col-2">
+        <!-- <div class="col-2">
 
-        </div>
+        </div> -->
 
       </div>
 
@@ -93,13 +93,8 @@
         </div>
       <% } %>
 
-      <footer>
 
-        <div class="row mb-3 justify-content-center mt-5" style="font-size: 16px;">
-          Fire Takes Inc.© 2020 All rights reserved. By Cainan Barboza, Dan Gelok and Micah Peterson
-        </div>
-
-      </footer>
+      <%- include('partials/content/footer.ejs')  %> 
 
     </div> <!-- end container fluid -->
 
