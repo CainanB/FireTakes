@@ -10,6 +10,13 @@ router.get('/login',(req,res) => {
     });
 });
 
+
+router.post('/logout', (req,res) => {
+    // res.send(`${req.session.username} logged out.`)
+    req.session.destroy();
+    res.redirect('/');
+});
+
 router.post('/login', async (req, res) => {
     
     try {

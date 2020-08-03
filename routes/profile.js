@@ -30,7 +30,8 @@ router.get('/profile',(req,res) => {
         
         res.render('profile', {
             pageID: "My Profile",
-            myreviews: myreviews
+            myreviews: myreviews,
+            username: req.session.username
         });
     })
     .catch(err =>{

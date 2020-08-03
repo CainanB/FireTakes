@@ -3,7 +3,8 @@ const router = express.Router();
 
 router.get('/',(req,res) => {
     res.render('index', {
-        pageID: "Home"
+        pageID: "Home",
+        username: req.session.username
     });
 })
 
