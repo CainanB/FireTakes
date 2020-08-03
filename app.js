@@ -27,8 +27,9 @@ app.use(require('./routes/login'))
 // app.use(require('./routes/profile'))
 // app.use(require('./routes/review'))
 app.use(require('./routes/registration'))
+app.use(require('./routes/login'))
 
 
-app.listen(3000, () => {
-    console.log(`listening on port 3000`);
+app.listen(4000, () => {
+    console.log(`listening on port 4000`);
 })
