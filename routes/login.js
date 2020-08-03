@@ -16,16 +16,19 @@ router.post('/login', async (req, res) => {
         let username = req.body.username;
         let password = req.body.password;
 
-        let results = await db.users.findAll({where: {username: username}})
+        let results = await db.users.findAll(
+            {where: {username: username}})
         // results is an array of objects from db
         if (results.length > 0) {
-
             bcrypt.compare(password, results[0].password, (err, response)=>{
 
                 if (response) {
                     console.log("it worked!")
+                    // console.log(results[0].id)
                     req.session.username = username
+                    req.session.userID = results[0].id
                     console.log(req.session.username)
+                    console.log(req.session.userID)
                     res.redirect('/')
                 }
                 else {
