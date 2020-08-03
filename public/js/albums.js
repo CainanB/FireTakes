@@ -7,6 +7,7 @@ $(()=>{
     // var currentArtist;
     var currentAlbums;
     var currentAlbumOpen;
+    //$('#formDiv').hide();
 
     // ADD API KEYS OBJECT HERE
     const APIkeys = {
@@ -156,6 +157,7 @@ $(()=>{
       // GRABS ARTIST NAME THAT WAS CLICKED AND CALLS getAlbums FUNCTION
       // TO GRAB ALBUMS DATA THEN EXTRACTS ALBUM NAME AND COVER IMAGE
      $("#albumList").click(async(e)=>{
+        
         $("#albumList").html("");
         input.value = "";
          //console.log(e.target);
@@ -198,12 +200,13 @@ $(()=>{
          }
          console.log(currentAlbumOpen);
          console.log(currentAlbumOpen.id);
+         $('#albumIDinput').val(`${currentAlbumOpen.id}`)
          $('#embedPlayer').html(`
-         <iframe src="https://open.spotify.com/embed/album/${currentAlbumOpen.id}" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+         <iframe id="${currentAlbumOpen.id}"src="https://open.spotify.com/embed/album/${currentAlbumOpen.id}" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
          `)
 
          $(`<h2> ${currentAlbumOpen.name}, Track List</h2><br>`).insertBefore("#albumTracksList")
-        
+         $('#formDiv').show();
          
          
        

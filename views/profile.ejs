@@ -34,10 +34,16 @@
         </div>
 
         <div class="col-lg-9 pl-5 reviews">
+            
             <div class="row w-100 pt-3">
                 <h1 class="ml-2" style="font-family: 'Courier New', Courier, monospace;">My Reviews</h1>
             </div>
             <hr>
+            <% myreviews.forEach(review => { %>
+                <div> <%= review.text %>  </div>
+                <div> <%= review.albumID %>  </div>
+                <div> <%= review.stars %>  </div>
+            <% }) %>
             <div class="row">
                 <h1 class="ml-2">Rodeo</h1>
             </div>
