@@ -26,6 +26,7 @@ router.post('/login', async (req, res) => {
                     console.log("it worked!")
                     // console.log(results[0].id)
                     req.session.username = username
+
                     req.session.userID = results[0].id
                     console.log(req.session.username)
                     console.log(req.session.userID)

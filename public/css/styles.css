@@ -147,10 +147,10 @@ li{
     font-size: larger;
 }
 
-.title:hover{
-    /* background-color:#fec89a; */
-    color:orangered;
-}
+/* .title:hover{
+    background-color:#fec89a; 
+    color:orange;
+} */
 
 .titleSwap:after{
     content:'album';
@@ -171,6 +171,34 @@ li{
 .titleSwap2:hover{
     color:orange;
     font-size: 70px;
+}
+
+.FTSWAP:after{
+    content:'Fire Takes';
+}
+.FTSWAP:hover:after{
+    content:'Go Home?';
+}
+
+.reg:hover{
+    background-color:orange;
+    border:orange 1px solid;
+    color:black;
+}
+
+.duh:hover:after{
+    font-size: 15px;
+    content:'of course we do!'
+}
+
+.yes:hover:after{
+    font-size: 15px;
+    content:"we're just an api call without you"
+}
+
+.pls:hover:after{
+    font-size: 15px;
+    content:"please, boo"
 }
 
 .carousel-indicators li {
