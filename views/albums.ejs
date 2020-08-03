@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <!-- NEEDS USERNAME VARIABLE WITH SESSION USERNAME -->
     <%- include('partials/templates/head.ejs')  %> 
 
 </head>
@@ -53,6 +53,25 @@
 
             </div>
 
+            <% console.log(username) %>
+
+            <div id="formDiv" style="display: none;">
+           <% if(username != 'undefined' && username != undefined){ %> 
+            <form id="reviewForm" action="/albums" method="POST">
+                <h4><%= username %> </h4>
+                <input type="hidden" name="userID" value="<%= userID %> ">
+                <input id="albumIDinput" type="hidden" name="albumID" value="">
+
+                5 stars<input type="radio" name="rating" id="" value="5">
+                4 stars<input type="radio" name="rating" id="" value="4">
+                3 stars<input type="radio" name="rating" id="" value="3">
+                2 stars<input type="radio" name="rating" id="" value="2">
+                1 star<input type="radio" name="rating" id="" value="1">
+                <textarea name="reviewText" id="reviewText" cols="30" rows="10"></textarea>
+                <input type="submit">
+            </form>
+        <% } %> 
+        </div>
         
 
         <!-- <div id="artistName">
