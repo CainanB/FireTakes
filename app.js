@@ -23,11 +23,11 @@ app.use(session({
 app.use(require('./routes/index'))
 app.use(require('./routes/albums'))
 app.use(require('./routes/artists'))
-app.use(require('./routes/login'))
-// app.use(require('./routes/profile'))
-// app.use(require('./routes/review'))
 app.use(require('./routes/registration'))
 app.use(require('./routes/login'))
+app.use(require('./routes/profile'))
+
+
 
 
 app.listen(4000, () => {

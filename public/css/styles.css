@@ -9,12 +9,12 @@
 
 @media (min-width: 289px) and (max-width: 414px)
 {
-    html { font-size:0.7em; }
+    html { font-size:0.6em; }
 }
 
 @media (min-width: 415px) and (max-width: 991px)
 {
-    html { font-size:0.9em; }
+    html { font-size:0.8em; }
 }
 
 @media (min-width: 992px) and (max-width: 1199px)
@@ -87,6 +87,11 @@ a{
     padding: 0px;
 }
 
+a:hover{
+    text-decoration: none;
+}
+
+
 .nav-link{
     padding: 0px;
 }
@@ -137,9 +142,98 @@ li{
     color:rgb(255, 11, 11);
 }
 
+.profileLink:hover{
+    color:rgb(255, 11, 11);
+    font-size: larger;
+}
+
 .title:hover{
-    background-color:#fec89a;
+    /* background-color:#fec89a; */
     color:orangered;
+}
+
+.titleSwap:after{
+    content:'album';
+}
+.titleSwap:hover:after{
+    content:'artist';
+}
+.titleSwap{
+    color:black;
+}
+.titleSwap:hover{
+    color:orange;
+    font-size: 70px;
+}
+.titleSwap2{
+    color:black;
+}
+.titleSwap2:hover{
+    color:orange;
+    font-size: 70px;
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    text-indent: 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    background-color: black;
+    box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.5);    
+}
+.carousel-indicators .active {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    background-color: orangered;
+}
+
+.titleSwap2:after{
+    content:'artist';
+}
+.titleSwap2:hover:after{
+    content:'album';
+}
+
+blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+
+}
+
+.edit{
+    color:black;
+}
+.edit:hover{
+    color:orangered;
+    font-size: larger;
+}
+.cover:hover{
+    height:280px;
+    width:280px;
+}
+
+.prof:hover{
+    background-color: #a8dadc;
+}
+
+.reviews:hover{
+    background-color: #fec89a;
+}
+
+.checked {
+    color: orangered;
+}
+
+.cover{
+    height:250px;
+    width:250px;
 }
 
 
@@ -151,7 +245,8 @@ li{
     margin-left: 0;
     margin-right: 0;
 }
-/* 
-.logo{
-    color: orange;
-} */
+
+#albumTracksList{
+    padding-left: 3px;
+}
+
