@@ -7,7 +7,9 @@
 
     <div class="container-fluid">
 
-      <%- include('partials/content/header.ejs')  %> 
+    <%- include('partials/content/header.ejs')  %> 
+
+    <% if(username) { %>
 
       <div class="row mb-5">
         <!-- empty space -->
@@ -122,6 +124,10 @@
         </div>
 
     </div>
+
+    <% } else { %> 
+        <h1>You're not logged in, idiot.</h1>
+    <% } %>
 
 <!-- end of individual review block and db.forEach -->
 
