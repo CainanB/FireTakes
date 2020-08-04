@@ -98,17 +98,6 @@ $(()=>{
         
         }
     
-    // FETCH TOP ALBUM DATA FROM SPECIFIC ARTIST
-    // const getAlbums = async (artistID) => {
-    // const result = await fetch(`https://api.spotify.com/v1/artists/${artistID}/albums?market=ES&limit=10&offset=0`, {
-    //     method: 'GET',
-    //     headers: { 'Authorization' : 'Bearer ' + await getToken()}
-    // });
-    
-    // const albumData = await result.json();
-    // return albumData.items;
-    
-    // }
     
     
     
@@ -205,48 +194,7 @@ $(()=>{
             }
             
         })
-        // albumReviews = albumReviews.json()
-        // console.log(albumReviews);
-         
-       
-        //  for(let track of albumTracks.items){
-        //     if(track.preview_url != null){
-        //     $('#albumTracksList').append(`
-        //     <audio id="${track.preview_url}playPauseButtonplayer">
-        //    <source src="${track.preview_url}" type="audio/mpeg">
-        //    </audio>
-        //     <li><i id="${track.preview_url}playPauseButton" class="${track.preview_url} fa fa-play-circle" aria-hidden="true"></i>  ${track.name}, ${track.artists[0].name}</li>
-        //     `)
-        //     }else{
-        //        $('#albumTracksList').append(`
-        //        <li> ${track.name}, ${track.artists[0].name}</li>
-        //        `)
-        //     }
-        // }
-    
-         
         
      }) 
-
-    //  $("#albumTracksList").click((e)=>{
-    //      console.log(e.target.id);
-    //      let musicButton = document.getElementById(`${e.target.id}`)
-    //      if(musicButton.classList.contains("fa-play-circle")){
-    //         document.getElementById(`${e.target.id}player`).play();
-    //         musicButton.classList.remove("fa-play-circle");
-    //         musicButton.classList.add("fa-pause");
-    //     }else{
-    //         document.getElementById(`${e.target.id}player`).pause();
-    //         musicButton.classList.remove("fa-pause");
-    //         musicButton.classList.add("fa-play-circle");
-    //     }
-
-    //  })
-    
-
-
-
-
-    
     })
 
