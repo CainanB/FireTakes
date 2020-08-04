@@ -24,7 +24,18 @@
                 <%= username %> 
             </div>
             <div class="row pt-2 justify-content-center">
-                <img src="../images/placeholder.png" alt="">
+                <!-- <img src="../images/placeholder.png" alt=""> -->
+                <% if (hasProfilePhoto == 'true') { %>
+                    <img height="200px" src="/image">
+                <% }else{ %> 
+                    <img height="200px" src="../images/placeholder.png" alt="">
+                <% } %> 
+                <form action="/upload" method="post" enctype="multipart/form-data">
+                    <label for="files" style="cursor:pointer;" class="btn btn-primary">Choose Image</label>
+                    <input id="files" style="display:none;" type="file" accept="image/*" name="photo" >
+                    <label for="submit" style="cursor:pointer;" class="btn btn-primary">Upload Photo</label>
+                    <input id="submit" type="submit" style="display:none;" value="upload">
+            </form>
             </div>
 
             <div class="row pt-2 justify-content-center">
@@ -143,6 +154,6 @@
 
 
     <%- include('partials/templates/defaults.ejs')  %> 
-    <script src="/js/profileupload.js" type="text/javascript"></script>
+    <script src="/js/profile.js" type="text/javascript"></script>
   </body>
 </html>

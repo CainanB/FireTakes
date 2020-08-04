@@ -21,18 +21,18 @@ router.post('/upload', upload.single('photo'), (req, res) => {
           .then(updatedRecord=>{
             console.log(updatedRecord);
             req.session.hasProfilePhoto = "true"
-            res.redirect('/uploadTest')
+            res.redirect('/profile')
           })
 
     }
     else throw 'error';
 });
-router.get('/uploadTest',(req,res) => {
+// router.get('/uploadTest',(req,res) => {
 
-    res.render('uploadTest',{
-        hasProfilePhoto: req.session.hasProfilePhoto
-    })
-})
+//     res.render('uploadTest',{
+//         hasProfilePhoto: req.session.hasProfilePhoto
+//     })
+// })
 
 router.get('/image', (req,res) => {
     db.users.findOne(
