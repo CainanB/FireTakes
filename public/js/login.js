@@ -1,23 +1,25 @@
 $(()=>{
-    fetch('/albumSpecificReviews',{
-        method: "POST",
-        headers: {'Content-Type' : 'application/json'},
-        body: JSON.stringify({
-            albumID : currentAlbumOpen.id,
-            
+
+    $("#loginButton").click(async(e) => {
+        e.preventDefault(); 
+        fetch('/login',{
+            method: "POST",
+            headers: {'Content-Type' : 'application/json'},
+            body: JSON.stringify({
+                username : $('#usernameLogin').val(),
+                password: $('#passwordLogin').val()
+                
+            })
+        })
+        .then(results => results.json())
+        .then(result => {
+            console.log(result) 
+            if(result == "success"){
+                window.location.href = "/profile"
+            }else{
+                $('#loginFailMessage').show();
+            }
         })
     })
-    .then(results => results.json())
-    .then(reviews =>{
-        console.log(reviews);
-        for(let review of reviews){
-            $("#albumReviews").append(`
-            <h3>Username: ${review.username}</h3>
-            <p>${review.stars}</p>
-            <p>${review.reviewText}</p>
 
-        `)
-        }
-        
-    })
 })
