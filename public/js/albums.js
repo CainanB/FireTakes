@@ -160,36 +160,9 @@ $(()=>{
         
         $("#albumList").html("");
         input.value = "";
-         //console.log(e.target);
-        //  console.log($(`${e.target.id}`).html()); 
-        
-        //  console.log(albumTracks);
-        //  $(`<h2>Tracks</h2>`).insertBefore("#albumTracksList")
-        //  for(let track of albumTracks.items){
-        //      $('#albumTracksList').append(`
-        //      <audio id="${track.preview_url}playPauseButtonplayer">
-        //     <source src="${track.preview_url}" type="audio/mpeg">
-        //     </audio>
-        //      <li><i id="${track.preview_url}playPauseButton" class="${track.preview_url} fa fa-play-circle" aria-hidden="true"></i>  ${track.name}, ${track.artists[0].name}</li>
-        //      `)
-        //  }
+      
 
-            // let artists = await getArtists(e.target.id);
-            // let artistName = artists[0].name;
-            // let artistID = artists[0].id;
-            // let albums = await getAlbums(artistID);
-            // console.log(albums);
-            // // console.log(artists[0].images[0]);
-            // for(let album of albums){
-            //     $('#albumsInfo').append(`
-            //     <h3>${album.name}</h3>
-            //     <img src="${album.images[1].url}">
-            //     `)
-            // }
-            // $('#artistName').append(`<h1>${artistName}</h1>`)
-             
-            // let currentImageURL = artists[0].images[1].url;
-            //     $('#imgs').append(`<img src="${currentImageURL}">`)
+
             
         let albumTracks = await getTracks(e.target.id);
 
@@ -212,7 +185,10 @@ $(()=>{
             method: "POST",
             headers: {'Content-Type' : 'application/json'},
             body: JSON.stringify({
-                albumID : currentAlbumOpen.id
+                albumID : currentAlbumOpen.id,
+                albumArt: currentAlbumOpen.images[1].url,
+                albumName: currentAlbumOpen.name,
+                artistName: currentAlbumOpen.artists[0].name
             })
         })
         .then(results => results.json())
