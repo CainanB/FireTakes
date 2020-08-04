@@ -156,7 +156,7 @@ h3{
     color:orange;
 } */
 
-.titleSwap:after{
+/* .titleSwap:after{
     content:'album';
 }
 .titleSwap:hover:after{
@@ -175,7 +175,7 @@ h3{
 .titleSwap2:hover{
     color:orange;
     font-size: 70px;
-}
+} */
 
 .FTSWAP:after{
     content:'Fire Takes';
@@ -224,12 +224,12 @@ h3{
     width:640px;
 }
 
-.titleSwap2:after{
-    content:'artist';
-}
-.titleSwap2:hover:after{
+/* .titleSwap2:after{
     content:'album';
 }
+.titleSwap2:hover:after{
+    content:'artist';
+} */
 
 blockquote {
     background: #f9f9f9;
@@ -282,7 +282,6 @@ blockquote {
     width:250px;
 }
 
-
 .search:hover{
     background-color:#fec89a;
 }
@@ -290,10 +289,6 @@ blockquote {
 .row{
     margin-left: 0;
     margin-right: 0;
-}
-
-#albumTracksList{
-    padding-left: 3px;
 }
 
 footer{
