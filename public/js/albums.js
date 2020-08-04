@@ -174,6 +174,9 @@ $(()=>{
          console.log(currentAlbumOpen);
          console.log(currentAlbumOpen.id);
          $('#albumIDinput').val(`${currentAlbumOpen.id}`)
+         $('#albumName').val(`${currentAlbumOpen.name}`)
+         $('#albumArt').val(`${currentAlbumOpen.images[1].url}`)
+         $('#artistName').val(`${currentAlbumOpen.artists[0].name}`)
          $('#embedPlayer').html(`
          <iframe id="${currentAlbumOpen.id}"src="https://open.spotify.com/embed/album/${currentAlbumOpen.id}" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
          `)
@@ -186,9 +189,7 @@ $(()=>{
             headers: {'Content-Type' : 'application/json'},
             body: JSON.stringify({
                 albumID : currentAlbumOpen.id,
-                albumArt: currentAlbumOpen.images[1].url,
-                albumName: currentAlbumOpen.name,
-                artistName: currentAlbumOpen.artists[0].name
+                
             })
         })
         .then(results => results.json())
