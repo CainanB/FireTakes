@@ -18,7 +18,10 @@ module.exports = (sequelize, DataTypes) => {
     authorID: DataTypes.INTEGER,
     stars: DataTypes.INTEGER,
     text: DataTypes.STRING,
-    albumID: DataTypes.STRING
+    albumID: DataTypes.STRING,
+    aristName: DataTypes.STRING,
+    albumURL: DataTypes.STRING,
+    albumTitle: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'reviews',
