@@ -34,6 +34,12 @@ router.post('/login', async (req, res) => {
                     // console.log(results[0].id)
                     req.session.username = username
                     req.session.userID = results[0].id
+                    if(results[0].profileImage){
+                        req.session.hasProfilePhoto = 'true'
+                        req.session.profilePhotoPath = results[0].profileImage
+                    }else{
+                        req.session.hasProfilePhoto = 'false'
+                    }
                     console.log(req.session.username)
                     console.log(req.session.userID)
                     res.redirect('/')
