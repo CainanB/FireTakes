@@ -73,7 +73,8 @@ router.get('/profile',(req,res) => {
         res.render('profile', {
             pageID: "My Profile",
             username: req.session.username,
-            myreviews: myreviews
+            myreviews: myreviews,
+            hasProfilePhoto: req.session.hasProfilePhoto
         });
     })
     .catch(err =>{
