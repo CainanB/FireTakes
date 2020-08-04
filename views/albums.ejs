@@ -12,11 +12,11 @@
         <%- include('partials/content/header.ejs')  %> 
 
         <div class="row pt-3 pb-3 pr-0 mt-3 title">
-            <div class="col-lg col-2"></div>
-            <div class="col-lg col-8 pr-0 d-flex justify-content-start">
+            <!-- <div class="col-lg col-2"></div> -->
+            <div class="col pr-0 d-flex justify-content-center">
                 <h1 style="font-family: monospace;">Search an artist<a class="titleSwap" href="/artists"></a></h1>
             </div>
-            <div class="col-lg col-2"></div>
+            <!-- <div class="col-lg col-2"></div> -->
         </div>
 
         <div class="row pt-3 pb-3 pr-0 search">
@@ -58,7 +58,7 @@
                     </div>
 
                     <div id="albumCover">
-                            
+                        
                     </div>
 
                 </div>
@@ -76,6 +76,15 @@
         <hr>
 
         <!-- start of review submission -->
+
+        <div id="reviewBlock">
+
+        </div>
+
+
+        <hr>
+
+
 
         <% if(username){ %> 
 
@@ -124,14 +133,6 @@
 
             </div>
         <% } %>
-
-        <div id="albumReviews">
-
-        </div>
-
-        <div id="albumsInfo">
-    
-        </div>
 
         <%- include('partials/content/footer.ejs')  %> 
 

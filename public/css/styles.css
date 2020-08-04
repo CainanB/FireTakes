@@ -138,10 +138,6 @@ li{
     cursor: pointer;
 }
 
-h3{
-    cursor: pointer;
-}
-
 #nameList>li:hover{
     color:rgb(255, 11, 11);
 }
