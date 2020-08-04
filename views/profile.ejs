@@ -45,11 +45,11 @@
             </div>
             <hr>
             <% myreviews.forEach(review => { %>
-                <h1> <%= review.albumName %>  </h1>
-                <h3> <%= review.artistName %>  </h3>
+                <h1> <%= review.albumTitle %>  </h1>
+                <h3> <%= review.aristName %>  </h3>
                 <div class="row ml-2 mt-2">
                     <!-- link to the albums details on the albums page -->
-                   <a href="/albums"><img class="cover mr-5" src=" <%= review.imageURL %>  " alt=""></a>
+                   <a href="/albums"><img class="cover mr-5" src=" <%= review.albumURL %>  " alt=""></a>
                     <span><a href="#" class="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Review</a></span>
                 </div>
                 <div> <%= review.text %>  </div>
