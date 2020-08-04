@@ -22,7 +22,7 @@ router.post('/login', async (req, res) => {
     try {
         let username = req.body.username;
         let password = req.body.password;
-
+        console.log(username, password);
         let results = await db.users.findAll(
             {where: {username: username}})
         // results is an array of objects from db
@@ -42,10 +42,10 @@ router.post('/login', async (req, res) => {
                     }
                     console.log(req.session.username)
                     console.log(req.session.userID)
-                    res.redirect('/')
+                    res.json('success')
                 }
                 else {
-                    //res.redirect('/')
+                    res.json('Incorrect username or password')
                     console.log(err)
                 }
             })
