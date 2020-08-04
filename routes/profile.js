@@ -38,7 +38,7 @@ const getAlbumInfo = async (albumID) => {
 } 
 
 // /profile/:id to grab a specific user page. id is unique primary key in the database
-router.get('/userinfo',(req,res) => {
+router.get('/profile',(req,res) => {
 
     // console.log(req.session.userID)
     db.reviews.findAll({where: {authorID: req.session.userID}})
@@ -70,7 +70,11 @@ router.get('/userinfo',(req,res) => {
             myreviews.push(newreview)
         };
 
-        res.json(myreviews)
+        res.render('profile', {
+            pageID: "My Profile",
+            username: req.session.username,
+            myreviews: myreviews
+        });
     })
     .catch(err =>{
         res.send(err)
@@ -78,12 +82,9 @@ router.get('/userinfo',(req,res) => {
 });
 
 
-router.get('/profile', (req, res) =>{
-    res.render('profile', {
-        pageID: "My Profile",
-        username: req.session.username
-    });
-})
+// router.get('/profile', (req, res) =>{
+    
+// })
 
 
 module.exports = router;
