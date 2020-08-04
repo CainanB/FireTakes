@@ -39,7 +39,6 @@
 
 body{
     font-family: 'Rubik', sans-serif;
-
 }
 
 header {
@@ -111,10 +110,11 @@ a:hover{
 
 .custom-toggler.navbar-toggler {
     border-color: orange;
-  } 
+} 
+
 .custom-toggler.navbar-toggler-icon {
     color: orange;
-  } 
+} 
 
 .navbar-dark .custom-toggler .collapzoid:hover{
     color:pink;
@@ -156,7 +156,7 @@ h3{
     color:orange;
 } */
 
-.titleSwap:after{
+/* .titleSwap:after{
     content:'album';
 }
 .titleSwap:hover:after{
@@ -175,11 +175,18 @@ h3{
 .titleSwap2:hover{
     color:orange;
     font-size: 70px;
+} */
+
+.boing:hover{
+    background-color: orange;
+    border: orange 1px solid;
+    color:black;
 }
 
 .FTSWAP:after{
     content:'Fire Takes';
 }
+
 .FTSWAP:hover:after{
     content:'Go Home?';
 }
@@ -224,12 +231,12 @@ h3{
     width:640px;
 }
 
-.titleSwap2:after{
-    content:'artist';
-}
-.titleSwap2:hover:after{
+/* .titleSwap2:after{
     content:'album';
 }
+.titleSwap2:hover:after{
+    content:'artist';
+} */
 
 blockquote {
     background: #f9f9f9;
@@ -282,7 +289,6 @@ blockquote {
     width:250px;
 }
 
-
 .search:hover{
     background-color:#fec89a;
 }
@@ -292,11 +298,16 @@ blockquote {
     margin-right: 0;
 }
 
-#albumTracksList{
-    padding-left: 3px;
-}
-
 footer{
     background-color: #e5e5e5;
+}
+
+textarea{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 100%;
 }
 
