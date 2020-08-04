@@ -39,7 +39,6 @@
 
 body{
     font-family: 'Rubik', sans-serif;
-
 }
 
 header {
@@ -111,10 +110,11 @@ a:hover{
 
 .custom-toggler.navbar-toggler {
     border-color: orange;
-  } 
+} 
+
 .custom-toggler.navbar-toggler-icon {
     color: orange;
-  } 
+} 
 
 .navbar-dark .custom-toggler .collapzoid:hover{
     color:pink;
@@ -177,9 +177,16 @@ h3{
     font-size: 70px;
 } */
 
+.boing:hover{
+    background-color: orange;
+    border: orange 1px solid;
+    color:black;
+}
+
 .FTSWAP:after{
     content:'Fire Takes';
 }
+
 .FTSWAP:hover:after{
     content:'Go Home?';
 }
@@ -293,5 +300,14 @@ blockquote {
 
 footer{
     background-color: #e5e5e5;
+}
+
+textarea{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 100%;
 }
 

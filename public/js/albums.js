@@ -94,9 +94,7 @@ $(()=>{
 
     $('#searchField').keyup(async ()=>{
 
-        $("#nameList").html("");
-        $("#albumTracksList").html("");
-        $('#nameList').show();
+        // $("#nameList").html("");
         
         if(input.value.length >= 3){
             let artists = await getArtists(input.value);
@@ -117,7 +115,6 @@ $(()=>{
         $("#albumTracks h2,#albumTracks h3,#albumTracks img").remove();
         input.value= "";
         $("#nameList").html("");
-        $('#nameList').hide();
         let albums = await getSpecificAlbums(e.target.id);
         currentAlbums = albums;
 
@@ -155,8 +152,9 @@ $(()=>{
 
         $('#albumCover').html(`<img id="${currentAlbumOpen.id}" src="${currentAlbumOpen.images[1].url}" style="height:280px;width:300px;">`);
         $('#albumName').html(`${currentAlbumOpen.name}`);
-
+        // $('#artistName').html(`${currentAlbumOpen.artistID}`)
         $('#formDiv').show();
+        $('#reviewTitle').show();
         
         fetch('/albumSpecificReviews',{
             method: "POST",

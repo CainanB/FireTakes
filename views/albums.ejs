@@ -11,10 +11,10 @@
 
         <%- include('partials/content/header.ejs')  %> 
 
-        <div class="row pt-3 pb-3 pr-0 title">
+        <div class="row pt-3 pb-3 pr-0 mt-3 title">
             <div class="col-lg col-2"></div>
             <div class="col-lg col-8 pr-0 d-flex justify-content-start">
-                <h1 style="font-family: monospace;">Search an album<a class="titleSwap" href="/artists"></a></h1>
+                <h1 style="font-family: monospace;">Search an artist<a class="titleSwap" href="/artists"></a></h1>
             </div>
             <div class="col-lg col-2"></div>
         </div>
@@ -26,7 +26,7 @@
             <div class="col pl-0 pt-2 pr-0">
                 <form class="form-inline pl-3 d-flex justify-content-start align-items-center lg-form form-lg  w-100">
                     <i class="fa fa-search" aria-hidden="true"></i>
-                    <input id="searchField" class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search">
+                    <input id="searchField" class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search" autocomplete="off">
                 </form>
 
 
@@ -49,16 +49,12 @@
 
         <div class="row">
 
-            <div class="col-lg-5 mt-4  d-flex align-items-end justify-content-center" id="embedPlayer">
-                <!-- embedded spotify album player -->
-            </div>
-
-            <div class="col-lg-7">
+            <div class="offset-lg-2 col-lg-3">
 
                 <div class="row h-100 align-items-end justify-content-center">
 
-                    <div id="albumName"  class="col-12 d-flex justify-content-center"  style="font-size:70px;padding-left:0px;padding-right:0px;">
-
+                    <div id="albumName"  class="col-12 d-flex justify-content-center"  style="font-size:50px;padding-left:0px;padding-right:0px;">
+                        <p id="artistName"></p>
                     </div>
 
                     <div id="albumCover">
@@ -70,28 +66,61 @@
             </div>
 
 
+            <div class="col-lg-7 mt-4  d-flex align-items-end justify-content-center" id="embedPlayer">
+                <!-- embedded spotify album player -->
+            </div>
+
+
         </div>
 
         <hr>
 
+        <!-- start of review submission -->
 
-            <div id="formDiv" style="display: none;">
-           <% if(username != 'undefined' && username != undefined){ %> 
-            <form id="reviewForm" action="/albums" method="POST">
-                <h4><%= username %> </h4>
-                <input type="hidden" name="userID" value="<%= userID %> ">
-                <input id="albumIDinput" type="hidden" name="albumID" value="">
+        <% if(username){ %> 
 
-                5 stars<input type="radio" name="rating" id="" value="5">
-                4 stars<input type="radio" name="rating" id="" value="4">
-                3 stars<input type="radio" name="rating" id="" value="3">
-                2 stars<input type="radio" name="rating" id="" value="2">
-                1 star<input type="radio" name="rating" id="" value="1">
-                <textarea name="reviewText" id="reviewText" cols="30" rows="10"></textarea>
-                <input type="submit">
-            </form>
-        <% } %> 
-        </div>
+            <div class="row mb-3">
+                <div id="reviewTitle" class="col" style="font-size:30px; text-align: center;display:none;">
+                    Submit a review as <%= username %>  
+                </div>
+            </div>
+
+            <div class="row" id="formDiv" style="display: none;">
+
+                <div class="col-lg-2 col-0"></div>
+                <div class="col">
+                    <form id="reviewForm" action="/albums" method="POST">
+                        <input type="hidden" name="userID" value="<%= userID %> ">
+                        <input id="albumIDinput" type="hidden" name="albumID" value="">
+
+                        <div class="row w-100">
+                            <div class="col" style="text-align: center;">
+                                5 stars <input type="radio" name="rating" id="" value="5">
+                                4 stars <input type="radio" name="rating" id="" value="4">
+                                3 stars <input type="radio" name="rating" id="" value="3">
+                                2 stars <input type="radio" name="rating" id="" value="2">
+                                1 star <input type="radio" name="rating" id="" value="1">
+                            </div>
+                        </div>
+
+                        <div class="row w-100">
+                            <div class="col d-flex justify-content-center mt-3 mb-3">
+                                <textarea name="reviewText" id="reviewText"></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="row w-100">
+                            <div class="col d-flex justify-content-center">
+                                <input class="boing btn btn-danger" type="submit">
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>
+                <div class="col-lg-2 col-0"></div>
+
+            </div>
+        <% } %>
 
         <div id="albumReviews">
 
