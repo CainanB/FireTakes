@@ -32,7 +32,7 @@
 <ul>
     <li>HTML</li>
     <li>CSS</li>
-    <li>JavaScript (Node.js)</li>
+    <li>JavaScript (via Node.js)</li>
     <li>SQL (via Sequelize)</li>
 </ul>
 
@@ -114,6 +114,10 @@ Other:
 <b>Challenge: Photo uploads</b>
 <br>
 <b>Solution: Research led us to Multer middleware, and documentation research provided the required solution.</b>
+
+<b>Challenge: We got sick</b>
+<br>
+<b>Solution: Naps.</b>
 
 
 
