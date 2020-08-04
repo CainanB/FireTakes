@@ -19,9 +19,8 @@ router.post('/albums', async (req, res) => {
     let albumTitle = req.body.albumName;
     let aristName = req.body.artistName;
     let albumURL = req.body.albumArt;
-    
-    // console.log(userID, review, rating, albumID, albumTitle, aristName, albumURL)
 
+  
     console.log(`userID: ${userID}, review: ${review}, rating: ${rating}, albumID: ${albumID}`);
 
     db.reviews.create({
@@ -30,8 +29,8 @@ router.post('/albums', async (req, res) => {
         text: review,
         albumID: albumID,
         aristName: aristName,
-        albumURL: albumURL,
-        albumTitle: albumTitle
+        albumTitle: albumTitle,
+        albumURL: albumURL
 
     })
     .then(user =>{
