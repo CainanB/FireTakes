@@ -51,11 +51,18 @@ router.get('/userinfo',(req,res) => {
             let text = results[r].dataValues.text;
             let albumID = results[r].dataValues.albumID;
             let stars = results[r].dataValues.stars;
+            let aristName = results[r].dataValues.aristName;
+            let albumURL = results[r].dataValues.albumURL;
+            let albumTitle = results[r].dataValues.albumTitle;
+            
             
             let newreview = {
                 "text": text,
                 "albumID": albumID,
                 "stars": stars,
+                "aristName": aristName,
+                "albumURL": albumURL,
+                "albumTitle": albumTitle
                 // "imageURL": XXXXXXXX,
                 // "albumName": XXXXXXX,
                 // "artistName": XXXXXXX

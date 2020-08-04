@@ -16,6 +16,11 @@ router.post('/albums', async (req, res) => {
     let review = req.body.reviewText
     let rating = parseInt(req.body.rating)
     let albumID = req.body.albumID
+    let albumTitle = req.body.albumName;
+    let aristName = req.body.artistName;
+    let albumURL = req.body.albumArt;
+    
+    // console.log(userID, review, rating, albumID, albumTitle, aristName, albumURL)
 
     console.log(`userID: ${userID}, review: ${review}, rating: ${rating}, albumID: ${albumID}`);
 
@@ -23,7 +28,10 @@ router.post('/albums', async (req, res) => {
         authorID: userID,
         stars: rating,
         text: review,
-        albumID: albumID
+        albumID: albumID,
+        aristName: aristName,
+        albumURL: albumURL,
+        albumTitle: albumTitle
 
     })
     .then(user =>{
