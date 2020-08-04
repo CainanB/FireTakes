@@ -130,7 +130,7 @@
           </button>
         </div>
         <div class="modal-body">
-            <form action="/login"  method="POST">
+            <form>   <!-- action="/login"  method="POST" -->
                 <div class="form-group">
                   <label for="username" class="col-form-label">Username</label>
                   <input type="text" class="form-control" id="usernameLogin" name="username">
@@ -141,7 +141,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-success">Log In</button>
+                  <button id="loginButton" type="submit" class="btn btn-success">Log In</button>
                 </div>
             </form>
         </div>
