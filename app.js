@@ -26,7 +26,9 @@ app.use(require('./routes/artists'))
 app.use(require('./routes/registration'))
 app.use(require('./routes/login'))
 app.use(require('./routes/profile'))
+app.use(require('./routes/albumSpecificReviews'))
 app.use(require('./routes/newreview'))
+app.use(require('./routes/upload'))
 
 
 
