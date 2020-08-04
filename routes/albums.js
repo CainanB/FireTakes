@@ -16,14 +16,21 @@ router.post('/albums', async (req, res) => {
     let review = req.body.reviewText
     let rating = parseInt(req.body.rating)
     let albumID = req.body.albumID
+    let albumTitle = req.body.albumName;
+    let aristName = req.body.artistName;
+    let albumURL = req.body.albumArt;
 
+  
     console.log(`userID: ${userID}, review: ${review}, rating: ${rating}, albumID: ${albumID}`);
 
     db.reviews.create({
         authorID: userID,
         stars: rating,
         text: review,
-        albumID: albumID
+        albumID: albumID,
+        aristName: aristName,
+        albumTitle: albumTitle,
+        albumURL: albumURL
 
     })
     .then(user =>{

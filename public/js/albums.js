@@ -133,6 +133,7 @@ $(()=>{
         
         $("#albumList").html("");
         input.value = "";
+
             
         let albumTracks = await getTracks(e.target.id);
 
@@ -156,11 +157,13 @@ $(()=>{
         $('#formDiv').show();
         $('#reviewTitle').show();
         
+
         fetch('/albumSpecificReviews',{
             method: "POST",
             headers: {'Content-Type' : 'application/json'},
             body: JSON.stringify({
-                albumID : currentAlbumOpen.id
+                albumID : currentAlbumOpen.id,
+                
             })
         })
         .then(results => results.json())

@@ -9,7 +9,9 @@ router.post('/newreview', (req, res) => {
     let stars = req.body.stars;
     let text = req.body.text;
     let albumID = req.body.albumID;
-    console.log(authorID, stars, text, albumID);
+   
+    
+    console.log(authorID, stars, text, albumID, albumTitle, aristName, albumURL);
 
     // let passwordEncrypted = bcrypt.hashSync(password, 8)
 
@@ -18,6 +20,9 @@ router.post('/newreview', (req, res) => {
         authorID: authorID,
         stars: stars,
         text: text,
+        albumTitle: albumTitle,
+        aristName: aristName,
+        albumURL: albumURL,
         albumID: albumID
     })
     .then(user =>{
