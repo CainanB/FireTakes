@@ -3,10 +3,12 @@ const router = express.Router();
 const db = require('../models')
 
 router.get('/albums',(req,res) => {
+    let rating = parseInt(req.body.rating);
     res.render('albums', {
         pageID: "Albums",
         username: req.session.username,
-        userID: req.session.userID
+        userID: req.session.userID,
+        stars:rating
     });
 })
 
