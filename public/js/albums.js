@@ -144,6 +144,9 @@ $(()=>{
         }
 
         $('#albumIDinput').val(`${currentAlbumOpen.id}`);
+        $('#albumNameinput').val(`${currentAlbumOpen.name}`);
+        $('#albumArtinput').val(`${currentAlbumOpen.images[1].url}`);
+        $('#artistNameinput').val(`${currentAlbumOpen.artists[0].name}`);
 
         $('#embedPlayer').html(`
 

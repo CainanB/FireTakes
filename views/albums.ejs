@@ -12,11 +12,11 @@
         <%- include('partials/content/header.ejs')  %> 
 
         <div class="row pt-3 pb-3 pr-0 mt-3 title">
-            <div class="col-lg col-2"></div>
-            <div class="col-lg col-8 pr-0 d-flex justify-content-start">
+            <!-- <div class="col-lg col-2"></div> -->
+            <div class="col pr-0 d-flex justify-content-center">
                 <h1 style="font-family: monospace;">Search an artist<a class="titleSwap" href="/artists"></a></h1>
             </div>
-            <div class="col-lg col-2"></div>
+            <!-- <div class="col-lg col-2"></div> -->
         </div>
 
         <div class="row pt-3 pb-3 pr-0 search">
@@ -58,7 +58,7 @@
                     </div>
 
                     <div id="albumCover">
-                            
+                        
                     </div>
 
                 </div>
@@ -92,6 +92,9 @@
                     <form id="reviewForm" action="/albums" method="POST">
                         <input type="hidden" name="userID" value="<%= userID %> ">
                         <input id="albumIDinput" type="hidden" name="albumID" value="">
+                        <input id="albumArtinput" type="hidden" name="albumArt" value="">
+                        <input id="albumNameinput" type="hidden" name="albumName" value="">
+                        <input id="artistNameinput" type="hidden" name="artistName" value="">
 
                         <div class="row w-100">
                             <div class="col" style="text-align: center;">
