@@ -35,4 +35,16 @@ $(()=>{
         console.log(albumData);
         return albumData;
         }  
+
+
+    
+    // make fetch call for user Info
+
+    const getUserInfo = async () =>{
+        const reviews = await fetch('/userinfo').json()
+        console.log(reviews)
+    }
+
+    getUserInfo()
+
 })

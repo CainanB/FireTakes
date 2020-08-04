@@ -2,8 +2,8 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models');
-const axios = require('axios');
-const btoa = require('btoa');
+// const axios = require('axios');
+// const btoa = require('btoa');
 
 const APIkeys = {
     clientId :'73189585c28c4d4e93e7db8ec63f156f',
@@ -38,7 +38,7 @@ const getAlbumInfo = async (albumID) => {
 } 
 
 // /profile/:id to grab a specific user page. id is unique primary key in the database
-router.get('/profile',(req,res) => {
+router.get('/userinfo',(req,res) => {
 
     // console.log(req.session.userID)
     db.reviews.findAll({where: {authorID: req.session.userID}})
@@ -52,9 +52,6 @@ router.get('/profile',(req,res) => {
             let albumID = results[r].dataValues.albumID;
             let stars = results[r].dataValues.stars;
             
-            getAlbumInfo(albumID)
-
-
             let newreview = {
                 "text": text,
                 "albumID": albumID,
@@ -63,19 +60,23 @@ router.get('/profile',(req,res) => {
                 // "albumName": XXXXXXX,
                 // "artistName": XXXXXXX
             }
-            
             myreviews.push(newreview)
-        
         };
-        res.render('profile', {
-            pageID: "My Profile",
-            myreviews: myreviews,
-            username: req.session.username
-        });
+
+        res.json(myreviews)
     })
     .catch(err =>{
         res.send(err)
     })
 });
+
+
+router.get('/profile', (req, res) =>{
+    res.render('profile', {
+        pageID: "My Profile",
+        username: req.session.username
+    });
+})
+
 
 module.exports = router;
