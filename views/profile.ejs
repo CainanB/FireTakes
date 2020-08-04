@@ -7,20 +7,24 @@
 
     <div class="container-fluid">
 
-      <%- include('partials/content/header.ejs')  %> 
+    <%- include('partials/content/header.ejs')  %> 
+
+    <% if(username) { %>
 
       <div class="row mb-5">
         <!-- empty space -->
       </div>
 
-      <div class="row pt-3 pb-3 pr-0">
+      <div class="row pt-3 pr-0">
 
 
         <div class="col-lg-3 prof">
 
-            <div class="row pt-3 justify-content-center">
-                    <img src="../images/placeholder.png" alt="">
-                   
+            <div class="row justify-content-center">
+                <%= username %> 
+            </div>
+            <div class="row pt-2 justify-content-center">
+                <img src="../images/placeholder.png" alt="">
             </div>
 
             <div class="row pt-2 justify-content-center">
@@ -36,7 +40,8 @@
         <div class="col-lg-9 pl-5 reviews">
             
             <div class="row w-100 pt-3">
-                <h1 class="ml-2" style="font-family: 'Courier New', Courier, monospace;">My Reviews</h1>
+                <h1 class="ml-2" style="font-family:inherit;font-size:80px;"> <%= username %>'s  <span style="color:rgb(255, 11, 11)">fire</span><img src="../../../images/FireAlone.png" class="mb-2" alt="fireTakesLogo" style="height:40px;width:48px;"></a> reviews</h1>
+                
             </div>
             <hr>
             <% myreviews.forEach(review => { %>
@@ -83,7 +88,7 @@
     </div>  -->
     <!-- end of individual review block and db.forEach -->
 
-    <!-- <div class="row mt-3 pb-3 pr-0">
+    <div class="row pr-0">
 
         <div class="col-lg-3">
             <div class="row w-100 pt-3"></div> 
@@ -128,7 +133,11 @@
 
     </div>
 
-<!-- end of individual review block and db.forEach -->
+    <% } else { %> 
+        <h1>You're not logged in, idiot.</h1>
+    <% } %>
+
+    <%- include('partials/content/footer.ejs')  %> 
 
 </div> <!-- end container fluid -->
 

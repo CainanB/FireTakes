@@ -1,17 +1,17 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <%- include('partials/templates/head.ejs')  %> 
+    <%- include('partials/templates/head.ejs')  %>
   </head>
   <body style="background-color: #e5e5e5;">
 
     <div class="container-fluid">
 
-      <%- include('partials/content/header.ejs')  %> 
+      <%- include('partials/content/header.ejs')  %>
 
       <div class="row pt-3 pb-3 pr-0 title">
 
-        <div class="col-2"></div>
+        <!-- <div class="col-2"></div> -->
 
         <div class="col">
           <div class="row w-100 justify-content-center">
@@ -26,17 +26,17 @@
 
         </div>
 
-        <div class="col-2"></div>
+        <!-- <div class="col-2"></div> -->
 
       </div>
 
       <div class="row">
 
-        <div class="col-2">
+        <!-- <div class="col-2">
           
-        </div>
+        </div> -->
 
-        <div class="col">
+        <div class="col d-flex justify-content-center">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
               <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -65,41 +65,36 @@
             </div>
         </div>
 
-        <div class="col-2">
+        <!-- <div class="col-2">
 
-        </div>
+        </div> -->
 
       </div>
 
       <!-- REGISTRATION SECTION -->
 
-      <div class="row">
-        <div class="col-2"></div>
-        <div class="col questions">
-          <h3 class="duh mt-5 mb-2" style="text-align: left;">Think others will care about your opinion? </h3>
-          <h3 class="yes mt-4 mb-2" style="text-align: left;">Want to share your music knowledge? </h3>
-          <h3 class="pls mt-4 mb-2" style="text-align: left;">Register an account with us </h3>
+      <% if(!username) { %>
+        <div class="row">
+          <!-- <div class="col-2"></div> -->
+          <div class="col questions" style="text-align: center;">
+            <h3 class="duh mt-5 mb-2" style="text-align: center;">Think others will care about your opinion? </h3>
+            <h3 class="yes mt-4 mb-2" style="text-align: center;">Want to share your music knowledge? </h3>
+            <h3 class="pls mt-4 mb-2" style="text-align: center;">Register an account with us </h3>
 
-        </div>
-        <!-- <div class="col-2"></div> -->
-      </div>
-
-      <div class="row">
-        <div class="col-2"></div>
-        <div class="col d-flex justify-content-center">
-          <button type="button" class="reg btn btn-lg btn-danger mt-5 mb-3" data-toggle="modal" data-target="#exampleModal">Register</button>
-        </div>
-        <div class="col-2"></div>
-      </div>
-
-
-      <footer>
-
-        <div class="row mb-3 justify-content-center mt-5" style="font-size: 16px;">
-          2020© All rights reserved. By Cainan Barboza, Dan Gelok and Micah Peterson
+          </div>
         </div>
 
-      </footer>
+        <div class="row">
+          <div class="col-2"></div>
+          <div class="col d-flex justify-content-center">
+            <button id="reg" type="button" class="reg btn btn-lg btn-danger mt-5 mb-3" data-toggle="modal" data-target="#exampleModal"></button>
+          </div>
+          <div class="col-2"></div>
+        </div>
+      <% } %>
+
+
+      <%- include('partials/content/footer.ejs')  %> 
 
     </div> <!-- end container fluid -->
 

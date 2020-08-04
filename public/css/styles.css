@@ -138,6 +138,10 @@ li{
     cursor: pointer;
 }
 
+h3{
+    cursor: pointer;
+}
+
 #nameList>li:hover{
     color:rgb(255, 11, 11);
 }
@@ -180,12 +184,6 @@ li{
     content:'Go Home?';
 }
 
-.reg:hover{
-    background-color:orange;
-    border:orange 1px solid;
-    color:black;
-}
-
 .duh:hover:after{
     font-size: 15px;
     content:'of course we do!'
@@ -200,6 +198,8 @@ li{
     font-size: 15px;
     content:"please, boo"
 }
+
+/*CAROUSEL STYLING*/
 
 .carousel-indicators li {
     display: inline-block;
@@ -218,6 +218,10 @@ li{
     height: 30px;
     margin: 10px;
     background-color: orangered;
+}
+
+.carousel {
+    width:640px;
 }
 
 .titleSwap2:after{
@@ -255,6 +259,20 @@ blockquote {
     background-color: #fec89a;
 }
 
+.reg:after{
+    content:'Register'
+}
+
+.reg:hover:after{
+    content: "Too easy"
+}
+
+.reg:hover{
+    background-color:orange;
+    border:orange 1px solid;
+    color:black;
+}
+
 .checked {
     color: orangered;
 }
@@ -276,5 +294,9 @@ blockquote {
 
 #albumTracksList{
     padding-left: 3px;
+}
+
+footer{
+    background-color: #e5e5e5;
 }
 
