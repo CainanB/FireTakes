@@ -40,23 +40,29 @@
             </div>
             <hr>
             <% myreviews.forEach(review => { %>
+                <h1> <%= review.albumName %>  </h1>
+                <h3> <%= review.artistName %>  </h3>
+                <div class="row ml-2 mt-2">
+                    <!-- link to the albums details on the albums page -->
+                   <a href="/albums"><img class="cover mr-5" src=" <%= review.imageURL %>  " alt=""></a>
+                    <span><a href="#" class="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Review</a></span>
+                </div>
                 <div> <%= review.text %>  </div>
-                <div> <%= review.albumID %>  </div>
-                <div> <%= review.stars %>  </div>
+                <div> <%= review.stars %> Stars </div>
             <% }) %>
-            <div class="row">
+            <!-- <div class="row">
                 <h1 class="ml-2">Rodeo</h1>
             </div>
-            <div class="row ml-2 mt-2">
+            <div class="row ml-2 mt-2"> -->
                 <!-- link to the albums details on the albums page -->
-               <a href="/albums"><img class="cover mr-5" src="../images/rodeo.jpg" alt=""></a>
+               <!-- <a href="/albums"><img class="cover mr-5" src="../images/rodeo.jpg" alt=""></a>
                 <span><a href="#" class="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Review</a></span>
-            </div>
+            </div> -->
 
             <!-- save album rating as integer and add a checked star
                     for each -->
 
-            <div class="row ml-2 mt-3">
+            <!-- <div class="row ml-2 mt-3">
                 <span class="one fa fa-star fa-2x checked"></span>
                 <span class="two fa fa-star fa-2x checked"></span>
                 <span class="three fa fa-star fa-2x checked"></span>
@@ -74,15 +80,17 @@
 
         </div>
 
-    </div> <!-- end of individual review block and db.forEach -->
+    </div>  -->
+    <!-- end of individual review block and db.forEach -->
 
-    <div class="row mt-3 pb-3 pr-0">
+    <!-- <div class="row mt-3 pb-3 pr-0">
 
         <div class="col-lg-3">
-            <div class="row w-100 pt-3"></div> <!-- empty space for page formatting -->
-        </div>
+            <div class="row w-100 pt-3"></div> 
+        </div> -->
+        <!-- empty space for page formatting -->
 
-        <div class="col-lg-9 pl-5 reviews">
+        <!-- <div class="col-lg-9 pl-5 reviews">
 
             <hr>
 
@@ -91,16 +99,16 @@
             </div>
 
             <div class="row ml-2 mt-2">
-                <!-- link to the albums details on the albums page -->
-                <a href="/albums"><img class="cover mr-5" src="../images/birds.jpg" alt=""></a>
+                link to the albums details on the albums page -->
+                <!-- <a href="/albums"><img class="cover mr-5" src="../images/birds.jpg" alt=""></a>
                 <span><a href="#" class="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Review</a></span>
-            </div>
+            </div> -->
 
             <!-- save album rating as integer and add a checked star
                     for each -->
             <!-- example: album is given 4 stars, the span class "five" wouldnt have checked class-->
 
-            <div class="row ml-2 mt-3">
+            <!-- <div class="row ml-2 mt-3">
                 <span class="one fa fa-star fa-2x checked"></span>
                 <span class="two fa fa-star fa-2x checked"></span>
                 <span class="three fa fa-star fa-2x checked"></span>
@@ -116,7 +124,7 @@
                 </blockquote>
             </div>
 
-        </div>
+        </div> -->
 
     </div>
 
