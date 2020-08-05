@@ -37,7 +37,7 @@ $(()=>{
                         <a href="/albums"><img class="cover mr-5" src="${review.albumURL}" height="200" width="200" alt=""></a>
                     </div>
                     <div class="col-xl-8 ml-xl-3 mt-1 pl-0 d-flex justify-content-start">
-                        <blockquote class="lead blockquote text-left ml-0 mt-0 pt-1 h-100 w-100">
+                        <blockquote class="lead blockquote text-left ml-0 mt-0 pb-0 pt-1 h-100 w-100">
                             ${review.text} 
                         </blockquote>
                     </div>
