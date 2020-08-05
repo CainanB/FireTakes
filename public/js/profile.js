@@ -42,7 +42,6 @@ $(()=>{
                         </blockquote>
                     </div>
 
-
                 </div>
 
                 <div id="stars" class="col-2 pt-1 mt-1  ml-0 d-flex justify-content-start">
