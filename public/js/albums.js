@@ -92,20 +92,33 @@ $(()=>{
 
     // CALLS getArtists function to find results on every key up after 3 characters
 
+   
     $('#searchField').keyup(async ()=>{
 
-        // $("#nameList").html("");
+        $("#nameList").html("");
+        $("#albumList").html("");
         
         if(input.value.length >= 3){
             let artists = await getArtists(input.value);
 
             for(let artist of artists){
-            
-                $("#nameList").append(`
+                
+                
+                    $("#nameList").append(`
+                <li class="pt-1" id="${artist.id}"><img id="${artist.id}"height="50px" width="50px" src="${artist.images[2].url}">${artist.name}</li>`)
+                
+                
+                
+                        // $(`<li class="pt-1" id="${artist.id}"><img id="${artist.id}"height="50px" width="50px" src="${artist.images[2].url}">${artist.name}</li>`).hide().appendTo("#nameList").delay(1000).fadeIn("slow");
+                     
 
-                    <li class="pt-1" id="${artist.id}"><img id="${artist.id}"height="50px" width="50px" src="${artist.images[2].url}">${artist.name}</li>
+                 
 
-                `)
+             
+                  
+
+               
+                
             }
         }
 
