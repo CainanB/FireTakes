@@ -193,7 +193,7 @@ $(()=>{
                         </div>
 
 
-                        <div id="stars" class="col-2 d-flex justify-content-start">
+                        <div id="stars" class="col-2 pt-2 d-flex justify-content-start">
                             ${starHTML}
                         </div>
 
@@ -205,6 +205,7 @@ $(()=>{
                 `)
 
             }
+
         });
 
     }); //end of albumList event listener 
