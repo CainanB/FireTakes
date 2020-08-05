@@ -4,7 +4,7 @@ let auth = (req, res, next) => {
         next()
     }
     else {
-        res.redirect('/login')
+        res.redirect('/')
     }
 }
 

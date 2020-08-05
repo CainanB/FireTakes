@@ -11,7 +11,7 @@ router.post('/newreview', (req, res) => {
     let albumID = req.body.albumID;
    
     
-    console.log(authorID, stars, text, albumID, albumTitle, aristName, albumURL);
+    // console.log(authorID, stars, text, albumID, albumTitle, aristName, albumURL);
 
     // let passwordEncrypted = bcrypt.hashSync(password, 8)
 
@@ -26,7 +26,7 @@ router.post('/newreview', (req, res) => {
         albumID: albumID
     })
     .then(user =>{
-        console.log("new review saved!")
+        // console.log("new review saved!")
         res.redirect('/')
     })
     .catch(error =>{

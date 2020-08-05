@@ -29,7 +29,7 @@ $(()=>{
         });
     
         const data = await result.json();
-        console.log(data.access_token);
+        // console.log(data.access_token);
         return data.access_token;
     }
 
@@ -42,7 +42,7 @@ $(()=>{
         });
         
         const data = await result.json();
-        console.log(data.artists.items);
+        // console.log(data.artists.items);
         
         return data.artists.items;
 
@@ -57,7 +57,7 @@ $(()=>{
         });
         
         const albumData = await result.json();
-        console.log(albumData);
+        // console.log(albumData);
         return albumData.items;
         
     }    
@@ -132,7 +132,7 @@ $(()=>{
         currentAlbums = albums;
 
             for(let album of albums){
-                console.log(album.artists[0].name, album.name);
+                // console.log(album.artists[0].name, album.name);
                 $("#albumList").append(`<li class="pt-1" id="${album.id}"><img id="${album.id}"height="50px" src="${album.images[2].url}">${album.name}, By ${album.artists[0].name}</li>`)
                 
             }
@@ -186,7 +186,7 @@ $(()=>{
         .then(results => results.json())
         .then(reviews =>{
 
-            console.log(reviews);
+            // console.log(reviews);
 
             for(let review of reviews){
 
