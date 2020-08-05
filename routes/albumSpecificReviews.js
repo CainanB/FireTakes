@@ -4,7 +4,7 @@ const db = require('../models')
 
 router.post('/albumSpecificReviews',(req,res) => {
     let albumID = req.body.albumID
-    console.log(albumID);
+    // console.log(albumID);
 
 
     db.reviews.findAll({
@@ -22,9 +22,9 @@ router.post('/albumSpecificReviews',(req,res) => {
                     reviewText: review.text,
                     stars: review.stars
                 })
-                console.log(`${review.user.username} ${review.text}`);
+                // console.log(`${review.user.username} ${review.text}`);
             })
-            console.log(reviews);
+            // console.log(reviews);
             res.json(reviews)
         })
 })

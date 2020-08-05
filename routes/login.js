@@ -22,7 +22,7 @@ router.post('/login', async (req, res) => {
     try {
         let username = req.body.username;
         let password = req.body.password;
-        console.log(username, password);
+        // console.log(username, password);
         let results = await db.users.findAll(
             {where: {username: username}})
         // results is an array of objects from db
@@ -30,7 +30,7 @@ router.post('/login', async (req, res) => {
             bcrypt.compare(password, results[0].password, (err, response)=>{
 
                 if (response) {
-                    console.log("it worked!")
+                    // console.log("it worked!")
                     // console.log(results[0].id)
                     req.session.username = username
                     req.session.userID = results[0].id
@@ -40,8 +40,8 @@ router.post('/login', async (req, res) => {
                     }else{
                         req.session.hasProfilePhoto = 'false'
                     }
-                    console.log(req.session.username)
-                    console.log(req.session.userID)
+                    // console.log(req.session.username)
+                    // console.log(req.session.userID)
                     res.json('success')
                 }
                 else {

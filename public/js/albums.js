@@ -1,3 +1,4 @@
+import { APIkeys } from './keys.js'
 
 $(()=>{
     // GLOBAL VARIABLES
@@ -6,11 +7,6 @@ $(()=>{
     var currentAlbums;
     var currentAlbumOpen;
 
-    // ADD API KEYS OBJECT HERE
-    const APIkeys = {
-        clientId :'73189585c28c4d4e93e7db8ec63f156f',
-        clientSecret : 'a2e470f4466f4f9889aa510a35e55f12'
-    }
     
 
     const clientId = APIkeys.clientId;
@@ -29,7 +25,7 @@ $(()=>{
         });
     
         const data = await result.json();
-        console.log(data.access_token);
+        // console.log(data.access_token);
         return data.access_token;
     }
 
@@ -42,7 +38,7 @@ $(()=>{
         });
         
         const data = await result.json();
-        console.log(data.artists.items);
+        // console.log(data.artists.items);
         
         return data.artists.items;
 
@@ -57,7 +53,7 @@ $(()=>{
         });
         
         const albumData = await result.json();
-        console.log(albumData);
+        // console.log(albumData);
         return albumData.items;
         
     }    
@@ -138,7 +134,7 @@ $(()=>{
         currentAlbums = albums;
 
             for(let album of albums){
-                console.log(album.artists[0].name, album.name);
+                // console.log(album.artists[0].name, album.name);
                 $("#albumList").append(`<li class="pt-1" id="${album.id}"><img id="${album.id}"height="50px" src="${album.images[2].url}"> ${album.name}, ${album.artists[0].name}</li>`)
                 
             }
@@ -195,7 +191,7 @@ $(()=>{
         .then(results => results.json())
         .then(reviews =>{
 
-            console.log(reviews);
+            // console.log(reviews);
 
             if(reviews.length <= 0)
             {
