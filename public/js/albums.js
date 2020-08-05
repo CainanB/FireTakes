@@ -102,6 +102,7 @@ $(()=>{
         $("#albumCover").html("");
         $('#embedPlayer').html("");
         
+
         
         if(input.value.length >= 3){
             let artists = await getArtists(input.value);
