@@ -9,7 +9,7 @@ const fs = require("fs");
 router.post('/upload', upload.single('photo'), (req, res) => {
     if(req.file) {
         //res.json(req.file);
-        console.log(req.file);
+        // console.log(req.file);
         db.users.update({
             profileImage: req.file.filename
           },
@@ -19,7 +19,7 @@ router.post('/upload', upload.single('photo'), (req, res) => {
             }
           })
           .then(updatedRecord=>{
-            console.log(updatedRecord);
+            // console.log(updatedRecord);
             req.session.hasProfilePhoto = "true"
             res.redirect('/profile')
           })
@@ -42,7 +42,7 @@ router.get('/image', (req,res) => {
         }
       })
       .then(user =>{
-        console.log(user.profileImage);
+        // console.log(user.profileImage);
         res.sendFile(path.join(__dirname, `./uploads/profilephotos/${user.profileImage}`));
       })
     

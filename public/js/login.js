@@ -13,7 +13,7 @@ $(()=>{
         })
         .then(results => results.json())
         .then(result => {
-            console.log(result) 
+            // console.log(result) 
             if(result == "success"){
                 window.location.href = "/profile"
             }else{
