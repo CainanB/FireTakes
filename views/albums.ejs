@@ -30,7 +30,7 @@
                 </form>
 
 
-                <hr>
+                <hr style="background-color: orangered;">
     
                 <ul class="pl-5" id="nameList">
     
@@ -53,7 +53,7 @@
 
                 <div class="row h-100 align-items-end justify-content-center">
 
-                    <div id="albumName"  class="col-12 d-flex justify-content-center"  style="font-size:50px;padding-left:0px;padding-right:0px;">
+                    <div id="albumName"  class="col-12 d-flex justify-content-center"  style="font-size:50px;padding-left:10px;padding-right:0px;">
                         <p id="artistName"></p>
                     </div>
 
@@ -73,17 +73,36 @@
 
         </div>
 
-        <hr>
+        <hr style="display:none;">
 
         <!-- start of review submission -->
 
-        <div id="reviewBlock">
+        <div class="container" id="reviewBlock" style="background-color: #d9d9d9;">
+
+            <div id="userRev" class="row pt-1" style="display:none;">
+
+                <div class="col d-flex justify-content-center">
+                    <h1>Submitted Reviews</h1>
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col"></div>
+                <div class="col">
+                    <hr style="height: 1px;
+                    background-color: orangered;
+                    border: none;display:none;margin-top:0.5rem">
+                </div>
+                <div class="col"></div>
+            </div>
+
 
         </div>
 
 
-        <hr>
-
+        <hr style="display:none;">
 
 
         <% if(username){ %> 
@@ -119,13 +138,6 @@
                                 <label class="star-5" for="star-5">5</label>
                                 <span></span>
                             </div>
-                            <!-- <div class="col" style="text-align: center;">
-                                5 stars <input type="radio" name="rating" id="" value="5">
-                                4 stars <input type="radio" name="rating" id="" value="4">
-                                3 stars <input type="radio" name="rating" id="" value="3">
-                                2 stars <input type="radio" name="rating" id="" value="2">
-                                1 star <input type="radio" name="rating" id="" value="1">
-                            </div> -->
                         </div>
 
                         <div class="row w-100">
