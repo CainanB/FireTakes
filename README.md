@@ -96,6 +96,8 @@ Other:
     <li>Enable 'follow' status for albums or artists, with alerts to new reviews</li>
     <li>Provide chat room</li>
     <li>Enable comment responses per review</li>
+    <li>Place most recent reviews on landing page</li>
+    <li>Place users with highest num of reviews on landing page</li>
 </ul>
 
 </br>
