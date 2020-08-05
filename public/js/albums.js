@@ -201,6 +201,27 @@ $(()=>{
                     </div>
                 `);
             }
+            else
+            {
+                $('#reviewBlock').append(`
+
+                    <div class="col d-flex justify-content-center">
+                        <h1>Submitted Reviews</h1>
+                    </div>
+
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col">
+                            <hr style="height: 1px;
+                            background-color: orangered;
+                            border: none;margin-top:0.5rem">
+                        </div>
+                        <div class="col"></div>
+                    </div> 
+                `);
+            }
+
+
 
             for(let review of reviews){
 
@@ -214,6 +235,8 @@ $(()=>{
                 }
 
                 $('#reviewBlock').append(`
+
+
 
                     <div class="row">
 
