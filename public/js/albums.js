@@ -1,3 +1,4 @@
+import { APIkeys } from './keys.js'
 
 $(()=>{
     // GLOBAL VARIABLES
@@ -7,10 +8,10 @@ $(()=>{
     var currentAlbumOpen;
 
     // ADD API KEYS OBJECT HERE
-    const APIkeys = {
-        clientId :'73189585c28c4d4e93e7db8ec63f156f',
-        clientSecret : 'a2e470f4466f4f9889aa510a35e55f12'
-    }
+    // const APIkeys = {
+    //     clientId :'73189585c28c4d4e93e7db8ec63f156f',
+    //     clientSecret : 'a2e470f4466f4f9889aa510a35e55f12'
+    // }
     
 
     const clientId = APIkeys.clientId;
