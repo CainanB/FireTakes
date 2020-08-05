@@ -47,7 +47,7 @@ router.get('/userInfo', (req, res) =>{
            
         }
         myreviews.push(newreview)
-        console.log(myreviews);
+        // console.log(myreviews);
     };
     res.json(myreviews);
  
