@@ -2,51 +2,54 @@
 
 $(()=>{
 
-    // const APIkeys = {
-    //     clientId :'73189585c28c4d4e93e7db8ec63f156f',
-    //     clientSecret : 'a2e470f4466f4f9889aa510a35e55f12'
-    // }
-    // const clientId = APIkeys.clientId;
-    // const clientSecret = APIkeys.clientSecret;
-
-    // // CREATES SPOTIFY TOKEN FOR API CALLS
-    // const getToken = async () => {
-
-    //     const result = await fetch('https://accounts.spotify.com/api/token', {
-    //         method: 'POST',
-    //         headers: {
-    //             'Content-Type' : 'application/x-www-form-urlencoded', 
-    //             'Authorization' : 'Basic ' + btoa(clientId + ':' + clientSecret)
-    //         },
-    //         body: 'grant_type=client_credentials'
-    //     });
-
-    //     const data = await result.json();
-    //     console.log(data.access_token);
-    //     return data.access_token;
-    // }
-
-    // const getAlbumInfo = async (albumID) => {
-    //     const result = await fetch(`https://api.spotify.com/v1/albums/${albumID}?market=ES&limit=20&offset=0`, {
-    //         method: 'GET',
-    //         headers: { 'Authorization' : 'Bearer ' + await getToken()}
-    //     });
-    //     const albumData = await result.json();
-    //     console.log(albumData);
-    //     return albumData;
-    //     }  
 
 
     
     // // make fetch call for user Info
 
-    // const getUserInfo = async () =>{
-    //     const reviews = await fetch('/userinfo').json()
-    //     console.log(reviews)
-    // }
+    const getUserInfo = async () =>{
+        const reviews = await fetch('/userInfo')
+        // console.log(await reviews.json())
+        let userReviews = await reviews.json();
+
+        for(let review of userReviews){
+            $("#userReviewsBlock").append(`
+                 <h1> ${review.albumTitle} </h1>
+                 <h3> ${review.aristName} </h3>
+                 <div class="row ml-2 mt-2">
+                     
+                    <a href="/albums"><img class="cover mr-5" src="${review.albumURL}" alt=""></a>
+                     <span><a href="#" class="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Review</a></span>
+                    </div>
+                <div> ${review.text} </div>
+                <div> ${review.stars} Stars </div>
+            `)
+        }
+    }
+    getUserInfo()
+
+    //FROM PROFILE.EJS
+
+// <% myreviews.forEach(review => { %>
+//     <h1> <%= review.albumTitle %>  </h1>
+//     <h3> <%= review.aristName %>  </h3>
+//     <div class="row ml-2 mt-2">
+//         <!-- link to the albums details on the albums page -->
+//        <a href="/albums"><img class="cover mr-5" src=" <%= review.albumURL %>  " alt=""></a>
+//         <span><a href="#" class="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Review</a></span>
+//     </div>
+//     <div> <%= review.text %>  </div>
+//     <div> <%= review.stars %> Stars </div>
+// <% }) %>
 
     // getUserInfo()
-
+    // albumID: "0HKpzK9ZoJ0oVA43E5gewM"
+    // albumTitle: "St. Anger"
+    // albumURL: "https://i.scdn.co/image/ab67616d00001e02ee5869b2880109918fc47199"
+    // aristName: "Metallica"
+    // stars: 3
+    // text: "not cool"
+    
     
 
 })
