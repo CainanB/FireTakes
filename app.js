@@ -30,6 +30,11 @@ app.use(require('./routes/albumSpecificReviews'))
 app.use(require('./routes/newreview'))
 app.use(require('./routes/upload'))
 
+app.get('*', (req, res) => {
+    res.render('error', {
+        pageID: 'Error'
+    })
+})
 
 
 app.listen(4001, () => {

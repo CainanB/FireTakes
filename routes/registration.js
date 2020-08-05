@@ -16,10 +16,11 @@ router.post('/registration', (req, res) => {
     })
     .then(user =>{
         // console.log("user registered!")
-        res.redirect('/')
+        res.json('success')
     })
     .catch(error =>{
-        console.log(error)
+        res.json('Username is already taken')
+        // console.log(error)
     })
 })
 
