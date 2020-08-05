@@ -22,7 +22,7 @@
     html {font-size:1.1em;}
 }
 
-@media (min-width: 1200px) {  
+@media (min-width: 1300px) {  
     html {font-size:1.3em;}    
 }
 
@@ -32,7 +32,7 @@
     margin:0px;
     box-sizing: border-box;
     transition-property: all;
-    transition-duration: .5s;
+    transition-duration: .3s;
     transition-timing-function: ease;
 }
 
@@ -254,8 +254,18 @@ blockquote {
     font-size: larger;
 }
 .cover:hover{
-    height:280px;
-    width:280px;
+    height:215px;
+    width:215px;
+}
+
+#profilePhoto{
+    border-radius: 50%;
+}
+
+.upload:hover{
+    background-color: orange;
+    color:black;
+    border:1px orange solid;
 }
 
 .prof:hover{
@@ -283,7 +293,6 @@ blockquote {
 .checked {
     color: orangered;
 }
-
 
 
 /* .search:hover{
