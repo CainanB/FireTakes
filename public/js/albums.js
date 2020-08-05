@@ -97,7 +97,7 @@ $(()=>{
         $("#albumName").html("");
         $("#albumCover").html("");
         $('#embedPlayer').html("");
-        
+
         
         if(input.value.length >= 3){
             let artists = await getArtists(input.value);
@@ -106,7 +106,7 @@ $(()=>{
                 
                 
                     $("#nameList").append(`
-                <li class="pt-1" id="${artist.id}"><img id="${artist.id}"height="50px" width="50px" src="${artist.images[2].url}">${artist.name}</li>`)
+                <li class="pt-1" id="${artist.id}"><img id="${artist.id}"height="50px" width="50px" src="${artist.images[2].url}"> ${artist.name}</li>`)
                 
                 
                 
@@ -134,7 +134,7 @@ $(()=>{
 
             for(let album of albums){
                 // console.log(album.artists[0].name, album.name);
-                $("#albumList").append(`<li class="pt-1" id="${album.id}"><img id="${album.id}"height="50px" src="${album.images[2].url}">${album.name}, By ${album.artists[0].name}</li>`)
+                $("#albumList").append(`<li class="pt-1" id="${album.id}"><img id="${album.id}"height="50px" src="${album.images[2].url}"> ${album.name}, ${album.artists[0].name}</li>`)
                 
             }
 
@@ -174,6 +174,9 @@ $(()=>{
         // $('#artistName').html(`${currentAlbumOpen.artistID}`)
         $('#formDiv').show();
         $('#reviewTitle').show();
+        $('#userRev').show();
+        $('hr').show();
+
         
 
         fetch('/albumSpecificReviews',{
@@ -189,7 +192,18 @@ $(()=>{
 
             // console.log(reviews);
 
+            if(reviews.length <= 0)
+            {
+                $('#reviewBlock').html(`
+                    <div id="noReviews" style="text-align:center;">
+                        No reviews yet. Be the first to write one.
+                    </div>
+                `);
+            }
+
             for(let review of reviews){
+
+                $('#noReviews').html('');
 
                 let starHTML = '';
 
@@ -202,12 +216,12 @@ $(()=>{
 
                     <div class="row">
 
-                        <div id="userReview" class="col-2 d-flex justify-content-end">
-                            <h3>${review.username}</h3>
+                        <div id="userReview" class="col-2 pl-5 ml-2 d-flex justify-content-end">
+                            <h5>${review.username}</h5>
                         </div>
 
 
-                        <div id="stars" class="col-2 d-flex justify-content-start">
+                        <div id="stars" class="col-2 pt-1 d-flex justify-content-start">
                             ${starHTML}
                         </div>
 
@@ -219,6 +233,7 @@ $(()=>{
                 `)
 
             }
+
         });
 
     }); //end of albumList event listener 
