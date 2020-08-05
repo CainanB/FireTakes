@@ -56,17 +56,13 @@
                 
             </div>
             <hr>
-            <% myreviews.forEach(review => { %>
-                <h1> <%= review.albumTitle %>  </h1>
-                <h3> <%= review.aristName %>  </h3>
-                <div class="row ml-2 mt-2">
-                    <!-- link to the albums details on the albums page -->
-                   <a href="/albums"><img class="cover mr-5" src=" <%= review.albumURL %>  " alt=""></a>
-                    <span><a href="#" class="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Review</a></span>
-                </div>
-                <div> <%= review.text %>  </div>
-                <div> <%= review.stars %> Stars </div>
-            <% }) %>
+            <!-- REMOVED CODE IN PROFILE.JS ROUTE FILE GOES HERE -->
+            <div id="userReviewsBlock">
+
+            </div>
+        </div>
+            
+
             <!-- <div class="row">
                 <h1 class="ml-2">Rodeo</h1>
             </div>
