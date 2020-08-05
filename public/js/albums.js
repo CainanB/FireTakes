@@ -132,6 +132,7 @@ $(()=>{
     $("#albumList").click(async(e)=>{
         
         $("#albumList").html("");
+        $('#albumReviews').html('');
         input.value = "";
 
             
@@ -175,13 +176,34 @@ $(()=>{
             console.log(reviews);
 
             for(let review of reviews){
-                $("#albumReviews").append(`
 
-                    <h3>Username: ${review.username}</h3>
-                    <p>${review.stars}</p>
-                    <p>${review.reviewText}</p>
+                let starHTML = '';
+
+                for(let i = 0; i < review.stars;i++)
+                {
+                    starHTML += '<span class="one fa fa-star checked"></span>'
+                }
+
+                $('#reviewBlock').append(`
+
+                    <div class="row">
+
+                        <div id="userReview" class="col-2 d-flex justify-content-end">
+                            <h3>${review.username}</h3>
+                        </div>
+
+
+                        <div id="stars" class="col-2 d-flex justify-content-start">
+                            ${starHTML}
+                        </div>
+
+                        <div id="reviewText"  class="col  d-flex justify-content-start">
+                            <p>${review.reviewText}</p>
+                        </div>
+                    </div>
 
                 `)
+
             }
         });
 
