@@ -122,9 +122,15 @@
                 <label for="message-text" class="col-form-label">Confirm Password</label>
                 <input type="password" class="form-control" id="passwordConfirm">
               </div>
+              <div id="registerFailMessage" style="display:none;"class="alert alert-warning" role="alert">
+                Username is already being used!
+              </div>
+              <div id="passwordFailMessage" style="display:none;"class="alert alert-warning" role="alert">
+                Passwords do not match!
+              </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary">Register</button>
+                <button type="submit" id="registerButton" class="btn btn-primary">Register</button>
               </div>
             </form>
           </div>
