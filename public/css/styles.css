@@ -138,7 +138,11 @@ li{
     cursor: pointer;
 }
 
+
 #nameList>li:hover{
+    color:rgb(255, 11, 11);
+}
+#albumList>li:hover{
     color:rgb(255, 11, 11);
 }
 
@@ -285,9 +289,9 @@ blockquote {
     width:250px;
 }
 
-.search:hover{
+/* .search:hover{
     background-color:#fec89a;
-}
+} */
 
 .row{
     margin-left: 0;
