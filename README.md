@@ -2,7 +2,7 @@
 
 <h1>Fire Takes<h1>
 
-<img src="">
+<img src="public/images/FireAndText.png">
 
 <h2><u>Overview:</u><h2>
 <h4>Fire Takes is the world's most popular album-review site, where users can share their opinions on today's hottest new releases and the greatest hits of yesterday. Users can search for albums to see current opinions, stream samples (or entire tracks, thanks to our partners over at Spotify), and add their own reviews. Registered users have a history of albums they have reviewed and are able to contribute to the growing conversation. </h4>
@@ -12,14 +12,17 @@
 <h2><u>Meet Team Cannon!</u></h2>
 
 <h3>Cainan Barboza</h3>
-<b>Role:</b> Lead back-end organization. API calls, database management, and routing (????) 
+https://github.com/CainanB
+<b>Role:</b> Lead back-end organization. API calls, database management, routing, and UI development.
 </br>
 
 <h3>Micah Peterson</h3>
-<b>Role:</b> Primary UI/UX development. HTML and CSS styling, animations, UI development, and functionality.
+https://github.com/petersonprojects
+<b>Role:</b> Lead UI/UX development. HTML and CSS styling, animations, UI development, and functionality.
 </br>
 
 <h3>Dan Gelok</h3>
+https://github.com/dgelok
 <b>Role:</b> Project management and back-end support. Authentication, database setup and management, and design.
 
 
