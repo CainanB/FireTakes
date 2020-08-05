@@ -94,7 +94,7 @@ $(()=>{
 
     $('#searchField').keyup(async ()=>{
 
-        // $("#nameList").html("");
+        $("#nameList").html("");
         
         if(input.value.length >= 3){
             let artists = await getArtists(input.value);
