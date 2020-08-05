@@ -6,7 +6,7 @@ const db = require('../models');
 router.post('/registration', (req, res) => {
     let username = req.body.username;
     let password = req.body.password;
-    console.log(username, password);
+    // console.log(username, password);
 
     let passwordEncrypted = bcrypt.hashSync(password, 8)
 
@@ -15,7 +15,7 @@ router.post('/registration', (req, res) => {
         password: passwordEncrypted
     })
     .then(user =>{
-        console.log("user registered!")
+        // console.log("user registered!")
         res.redirect('/')
     })
     .catch(error =>{

@@ -23,7 +23,7 @@ router.post('/albums', async (req, res) => {
     let albumURL = req.body.albumArt;
 
   
-    console.log(`userID: ${userID}, review: ${review}, rating: ${rating}, albumID: ${albumID}`);
+    // console.log(`userID: ${userID}, review: ${review}, rating: ${rating}, albumID: ${albumID}`);
 
     db.reviews.create({
         authorID: userID,
@@ -36,7 +36,7 @@ router.post('/albums', async (req, res) => {
 
     })
     .then(user =>{
-        console.log("review inserted succesfully")
+        // console.log("review inserted succesfully")
         res.redirect('/')
     })
     .catch(error =>{
