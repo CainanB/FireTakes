@@ -16,7 +16,11 @@ router.post('/albums', async (req, res) => {
     // let username = req.session.username;
     let userID = parseInt(req.session.userID)
     let review = req.body.reviewText
-    let rating = parseInt(req.body.rating)
+    if(req.body.rating == 'undefined' || req.body.rating == undefined)
+    {
+        req.body.rating = 5;
+    }
+    let rating =  parseInt(req.body.rating);
     let albumID = req.body.albumID
     let albumTitle = req.body.albumName;
     let aristName = req.body.artistName;
