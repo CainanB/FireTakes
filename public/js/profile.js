@@ -1,7 +1,10 @@
 
 
 $(()=>{
-
+    let allUserReviews = [];
+    let currentReview = {};
+    let htmlEls = [];
+    var reviewForms = [];
 
 
     
@@ -40,16 +43,20 @@ $(()=>{
     // }
 
     const getUserInfo = async () =>{
+        $("#userReviewsBlock").html("")
         const reviews = await fetch('/userInfo')
         // console.log(await reviews.json())
         let userReviews = await reviews.json();
-        for(let review of userReviews){
+        allUserReviews = [...userReviews];
+        userReviews.reverse();
+        userReviews.forEach((review,i)=>{
             let starHTML = '';
             for(let i = 0; i < review.stars;i++)
             {
                 starHTML += '<span class="one fa fa-star fa-2x checked"></span>'
             }
-            $("#userReviewsBlock").append(`
+            let htmlEl = `
+            <div id="${i}">
                 <div class="row">
                     <h1 class="ml-2"> ${review.albumTitle} </h1>
                 </div>
@@ -61,7 +68,7 @@ $(()=>{
                         <a href="/albums"><img class="cover mr-5" src="${review.albumURL}" height="200" width="200" alt=""></a>
                     </div>
                     <div class="col-xl-8 ml-xl-3 mt-1 pl-0 d-flex justify-content-start">
-                        <blockquote class="lead blockquote text-left ml-0 mt-0 pt-1 h-100 w-100">
+                        <blockquote id="${review.id}currentReviewText" class="lead blockquote text-left ml-0 mt-0 pt-1 h-100 w-100">
                             ${review.text}
                         </blockquote>
                     </div>
@@ -69,18 +76,24 @@ $(()=>{
                 <div id="stars" class="col-2 pt-1 mt-1  ml-0 d-flex justify-content-start">
                     ${starHTML}
                 </div>
-                <form id="${review.id}form">
-                <input id="${review.id}hiddenInput" type="hidden" name="albumID" value="${review.id}">
-                <textarea id="${review.id}editedReviewText" name="editedReviewText">${review.text}</textarea>
-                <input class="btn btn-danger editedReviewSubmitButton" type="submit" id="${review.id}">
-                </form>
+               
                 <a href="#" id="${review.id}" class="edit ml-2 mt-4" style="display:inline-block;"><i class="editReviewButton fa fa-pencil-square-o" aria-hidden="true"></i> Edit Review</a>
                 <hr style="height: 1px;
                 background-color: orangered;
                 border: none;margin-top:0.5rem">
-            `)
-            $(`#${review.id}form`).hide();
-        }
+                </div>
+            `
+            $("#userReviewsBlock").append(htmlEl)
+            reviewForms.push({
+                id: review.id,
+                html: `<form id="${review.id}form">
+                <input id="${review.id}hiddenInput" type="hidden" name="albumID" value="${review.id}">
+                <textarea id="${review.id}editedReviewText" name="editedReviewText">${review.text}</textarea>
+                <input class="btn btn-danger editedReviewSubmitButton" type="submit" id="${review.id}">
+                </form>`
+            })
+            
+        });
     }
 
 
@@ -101,7 +114,11 @@ $(()=>{
             e.preventDefault();
            $(`.edit`).hide();
             console.log(e.target.id);
-            $(`#${e.target.id}form`).show();
+            for(let form of reviewForms){
+                if(form.id == e.target.id){
+                    $(`#${e.target.id}currentReviewText`).html(form.html);
+                }
+            }
         }
         if(e.target.classList.contains("editedReviewSubmitButton")){
             console.log("submit button pressed")
@@ -119,7 +136,10 @@ $(()=>{
             .then(result => {
                 console.log(result) 
                 if(result == "success"){
-                    getUserInfo();
+                    let newReview = $(`#${e.target.id}editedReviewText`).val()
+                    $(`#${e.target.id}currentReviewText`).html(newReview)
+                    $(`.edit`).show();
+                    //getUserInfo();
                 }
                 
             })
