@@ -35,6 +35,7 @@ router.get('/userInfo', (req, res) =>{
         let aristName = results[r].dataValues.aristName;
         let albumURL = results[r].dataValues.albumURL;
         let albumTitle = results[r].dataValues.albumTitle;
+        let id = results[r].dataValues.id;
         
         
         let newreview = {
@@ -43,7 +44,8 @@ router.get('/userInfo', (req, res) =>{
             "stars": stars,
             "aristName": aristName,
             "albumURL": albumURL,
-            "albumTitle": albumTitle
+            "albumTitle": albumTitle,
+            "id": id
            
         }
         myreviews.push(newreview)
@@ -55,6 +57,24 @@ router.get('/userInfo', (req, res) =>{
 .catch(err =>{
     res.send(err)
 })
+
+})
+
+router.post('/updateReview', (req, res) => {
+    console.log(req.body)
+    // albumID: '22',
+    // editedReviewText: 'now is cool'
+
+            db.reviews.update({
+            text: req.body.editedReviewText
+        },{
+            where:{
+                id: req.body.albumID
+            }
+        })
+        .then(updatedRecord =>{
+            res.json("success")
+        })
 
 })
 
