@@ -102,25 +102,11 @@ $(()=>{
         
         if(input.value.length >= 3){
             let artists = await getArtists(input.value);
-
+          
             for(let artist of artists){
-                
-                
-                    $("#nameList").append(`
+                $("#nameList").append(`
                 <li class="pt-1" id="${artist.id}"><img id="${artist.id}"height="50px" width="50px" src="${artist.images[2].url}"> ${artist.name}</li>`)
-                
-                
-                
-                        // $(`<li class="pt-1" id="${artist.id}"><img id="${artist.id}"height="50px" width="50px" src="${artist.images[2].url}">${artist.name}</li>`).hide().appendTo("#nameList").delay(1000).fadeIn("slow");
-                     
-
                  
-
-             
-                  
-
-               
-                
             }
         }
 
@@ -131,13 +117,23 @@ $(()=>{
         input.value= "";
         $("#nameList").html("");
         let albums = await getSpecificAlbums(e.target.id);
-        currentAlbums = albums;
+        currentAlbums = [...albums];
+        let albumListNames = [];
 
             for(let album of albums){
+                    
+                    if(albumListNames.includes(album.name)){
+                        continue;
+                    }
+                    albumListNames.push(album.name)
+                    $("#albumList").append(`<li class="pt-1" id="${album.id}"><img id="${album.id}"height="50px" src="${album.images[2].url}"> ${album.name}, ${album.artists[0].name}</li>`)
+                  
+                }
+           
                 // console.log(album.artists[0].name, album.name);
-                $("#albumList").append(`<li class="pt-1" id="${album.id}"><img id="${album.id}"height="50px" src="${album.images[2].url}"> ${album.name}, ${album.artists[0].name}</li>`)
                 
-            }
+                
+            
 
     });  // end nameList event listener
 

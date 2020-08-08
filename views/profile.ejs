@@ -30,20 +30,20 @@
                     <% } %> 
                 </div>
 
-                <form class="w-100" action="/upload" method="post" enctype="multipart/form-data">
+                <form id="uploadForm" class="w-100" action="/upload" method="post" enctype="multipart/form-data">
 
                     <div class="col pt-1 d-flex justify-content-center w-100">
 
                             
-                        <label for="files" style="cursor:pointer;display:block;" class="btn upload btn-danger">Choose Image</label>
+                        <label id="chooseFile" for="files" style="cursor:pointer;display:block;" class="btn upload btn-danger">Upload Image</label>
                         <input id="files" style="display:none;" type="file" accept="image/*" name="photo" >
                 
                     </div>
 
                     <div class="col d-flex justify-content-center w-100">
 
-                        <label for="submit" style="cursor:pointer;display:block;" class="btn upload btn-danger">Upload Photo</label>
-                        <input id="submit" type="submit" style="display:none;" value="upload">
+                        <!-- <label id="uploadProfileImageButton"for="submit" style="cursor:pointer;display:block; display:none;" class="btn upload btn-danger">Upload Photo</label>
+                        <input id="submit" type="submit" style="display:none;" value="upload"> -->
 
                     </div>
 
@@ -78,6 +78,21 @@
         </div>
 
     </div> 
+
+
+    <div id="deleteModal" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            
+            <h5 class="modal-title">Please confirm deletion</h5>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="deleteConfirmButton" type="button" class="btn btn-danger" data-dismiss="modal">Confirm</button>
+            </div>
+         </div>
+         
+        </div>
+      </div>
 
     <%- include('partials/content/footer.ejs')  %> 
 

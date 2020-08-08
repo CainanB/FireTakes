@@ -78,6 +78,21 @@ router.post('/updateReview', (req, res) => {
 
 })
 
+router.post('/deleteReview', (req, res) => {
+    console.log(req.body)
+   
+            db.reviews.destroy({
+                where:{
+                    id: req.body.albumID
+                }
+            })
+        .then(rowDeleted =>{
+            if(rowDeleted == 1)
+            res.json("success")
+        })
+
+})
+
 
 module.exports = router;
 
