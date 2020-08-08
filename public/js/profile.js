@@ -1,62 +1,24 @@
 
 
 $(()=>{
-    let allUserReviews = [];
-    let currentReview = {};
-    let htmlEls = [];
+    var currentReviewToDeleteID;
     var reviewForms = [];
 
-
-    
-    // // make fetch call for user Info
-
-    // const getUserInfo = async () =>{
-    //     $("#userReviewsBlock").html("")
-    //     const reviews = await fetch('/userInfo')
-    //     // console.log(await reviews.json())
-    //     let userReviews = await reviews.json();
-    //     console.log(userReviews);
-    //     userReviews.reverse();
-    //     for(let review of userReviews){
-    //         $("#userReviewsBlock").append(`
-    //              <h1> ${review.albumTitle} </h1>
-    //              <h3> ${review.aristName} </h3>
-    //              <div class="row ml-2 mt-2">
-                     
-    //                 <a href="/albums"><img class="cover mr-5" src="${review.albumURL}" alt=""></a>
-    //                  <span><a href="#" id="${review.id}" class="edit"><i class="editReviewButton fa fa-pencil-square-o" aria-hidden="true"></i> Edit Review</a></span>
-    //                  <form id="${review.id}form">
-    //                  <input id="${review.id}hiddenInput" type="hidden" name="albumID" value="${review.id}">
-    //                  <textarea id="${review.id}editedReviewText" name="editedReviewText">${review.text}</textarea>
-    //                  <input class="btn btn-danger editedReviewSubmitButton" type="submit" id="${review.id}">
-    //                  </form>
-    //                 </div>
-    //             <div> ${review.text} </div>
-    //             <div> ${review.stars} Stars </div>
-    //         `)
-    //         $(`#${review.id}form`).hide();
-    //         // $(`#${review.id}`).click((e) => {
-    //         //     console.log(e.target.id)
-    //         // })
-            
-    //     }
-    // }
-
+    // FUNCTION TO CALL WHEN PAGE IS LOADED TO PULL REVIEWS
+    // FROM DATABASE AND POPULATE PROFILE PAGE WITH REVIEWS
     const getUserInfo = async () =>{
         $("#userReviewsBlock").html("")
         const reviews = await fetch('/userInfo')
-        // console.log(await reviews.json())
         let userReviews = await reviews.json();
-        allUserReviews = [...userReviews];
-        userReviews.reverse();
-        userReviews.forEach((review,i)=>{
+        userReviews.reverse();  // REVERSE THE RESULTS SO THE LATEST REVIEW MADE SHOWS FIRST
+        userReviews.forEach((review,i)=>{ // LOOP THROUGH EACH REVIEW AND CREATE HTML ELEMENTS
             let starHTML = '';
             for(let i = 0; i < review.stars;i++)
             {
                 starHTML += '<span class="one fa fa-star fa-2x checked"></span>'
             }
             let htmlEl = `
-            <div id="${i}">
+            <div id="${review.id}Container">
                 <div class="row">
                     <h1 class="ml-2"> ${review.albumTitle} </h1>
                 </div>
@@ -78,12 +40,15 @@ $(()=>{
                 </div>
                
                 <a href="#" id="${review.id}" class="edit ml-2 mt-4" style="display:inline-block;"><i class="editReviewButton fa fa-pencil-square-o" aria-hidden="true"></i> Edit Review</a>
+                <a href="#" id="${review.id}" class="delete edit ml-2 mt-4" style="display:inline-block;"><i class="deleteReviewButton fa fa-trash-o" aria-hidden="true"></i> Delete Review</a>
                 <hr style="height: 1px;
                 background-color: orangered;
                 border: none;margin-top:0.5rem">
                 </div>
             `
             $("#userReviewsBlock").append(htmlEl)
+
+            // SAVE A UNIQUE REVIEW EDIT FORM FOR EACH REVIEW AND PUSH TO ARRAY
             reviewForms.push({
                 id: review.id,
                 html: `<form id="${review.id}form">
@@ -104,15 +69,25 @@ $(()=>{
 
 
 
-
+    // CALL TO POPULATE WITH REVIEWS FROM DATABASE
     getUserInfo()
 
+    // CLICK HANDLER FOR EDIT, DELETE, & SUBMIT EDITED REVIEW
     $("#userReviewsBlock").click((e) => {
         e.preventDefault();
         console.log(e.target.classList);
-        if(e.target.classList.contains("edit")){
+    
+        // DELETE ICON WAS CLICKED
+        if(e.target.classList.contains("delete") && e.target.classList.contains("edit")){
+            e.preventDefault();
+            $('#deleteModal').modal('toggle')
+            currentReviewToDeleteID = e.target.id;
+            console.log(currentReviewToDeleteID );
+        
+        }else if(e.target.classList.contains("edit")){ // EDIT ICON WAS CLICKED
             e.preventDefault();
            $(`.edit`).hide();
+           $(`.delete`).hide();
             console.log(e.target.id);
             for(let form of reviewForms){
                 if(form.id == e.target.id){
@@ -120,6 +95,8 @@ $(()=>{
                 }
             }
         }
+
+        // SUBMIT EDITED REVIEW BUTTON CLICKED
         if(e.target.classList.contains("editedReviewSubmitButton")){
             console.log("submit button pressed")
             e.preventDefault(); 
@@ -150,6 +127,29 @@ $(()=>{
     })// END OF userReviewBlock click listener
 
 
+    // CLICK HANDLER FOR DELETE REVIEW CONFIRM MODAL
+    $('#deleteConfirmButton').click(e =>{
+            fetch('/deleteReview',{
+                method: "POST",
+                headers: {'Content-Type' : 'application/json'},
+                body: JSON.stringify({
+                    albumID : currentReviewToDeleteID
+                })
+            })
+            .then(results => results.json())
+            .then(result => {
+                console.log(result) 
+                if(result == "success"){
+                    console.log("review successfully deleted");
+                    //getUserInfo();
+                    
+                    $(`#${currentReviewToDeleteID}Container`).remove()
+                }
+                
+            })
+    })
+
+
     //FROM PROFILE.EJS
 
 // <% myreviews.forEach(review => { %>
@@ -164,14 +164,19 @@ $(()=>{
 //     <div> <%= review.stars %> Stars </div>
 // <% }) %>
 
-    // getUserInfo()
-    // albumID: "0HKpzK9ZoJ0oVA43E5gewM"
-    // albumTitle: "St. Anger"
-    // albumURL: "https://i.scdn.co/image/ab67616d00001e02ee5869b2880109918fc47199"
-    // aristName: "Metallica"
-    // stars: 3
-    // text: "not cool"
-    
-    
+
+// $("#chooseFile").click(e =>{
+//     $("#uploadProfileImageButton").show();
+//    console.log($("#files").val()); 
+// })
+// $("#uploadProfileImageButton").click(e =>{
+//     if($("#files").val() == ""){
+//         console.log("Please choose a file first");
+//     }
+// })
+
+$("#files").on('change', function(){
+    $('#uploadForm').submit();
+});
 
 })
