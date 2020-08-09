@@ -20,6 +20,7 @@
             <div class="row pt-3 pb-2">
                 <div class="row d-flex justify-content-center w-100" style="height:28px;display:inline-block;">
                     <%= username %> 
+                    <span id="userIDspan" style="display:none;"> <%= userID %></span>
                 </div>
 
                 <div class="col d-flex justify-content-center w-100">
@@ -50,10 +51,10 @@
                 </form>
 
                 <div class="col d-flex justify-content-center w-100">
-                    <!-- <ul style="padding-left:0px;">
-                        <li class="profileLink">Notifications</li>
-                        <li class="profileLink">Delete Account</li>
-                    </ul> -->
+                    <ul style="padding-left:0px;">
+                        <!-- <li class="profileLink">Notifications</li> -->
+                        <li id="deleteAccountButton" class="profileLink">Delete Account</li>
+                    </ul> 
                 </div>
 
             </div>
@@ -93,6 +94,21 @@
          
         </div>
       </div>
+
+    <div id="deleteAccountModal" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+            
+            <h6 class="modal-title">Really you want to delete your account?</h6>
+                <h6 class="modal-title">We didn't want you anyway.</h6>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="deleteAccountConfirmButton" type="button" class="btn btn-danger" data-dismiss="modal">Confirm</button>
+            </div>
+         </div>
+         
+        </div>
+    </div>
 
     <%- include('partials/content/footer.ejs')  %> 
 

@@ -179,4 +179,33 @@ $("#files").on('change', function(){
     $('#uploadForm').submit();
 });
 
+$("#deleteAccountButton").click(e =>{
+    console.log($("#userIDspan").html()); 
+    $('#deleteAccountModal').modal('toggle')
+
+})
+
+    $("#deleteAccountConfirmButton").click(e =>{
+        fetch('/deleteAccount',{
+            method: "POST",
+            headers: {'Content-Type' : 'application/json'},
+            body: JSON.stringify({
+                userID : $("#userIDspan").html()
+            })
+        })
+        .then(results => results.json())
+        .then(result => {
+            console.log(result) 
+            if(result == "success"){
+                console.log("account successfully deleted");
+                window.location.href = "/"
+                
+                
+            }
+    })
+})
+
+
+
+
 })

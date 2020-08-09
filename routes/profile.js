@@ -13,7 +13,8 @@ router.get('/profile',(req,res) => {
         res.render('profile', {
             pageID: "My Profile",
             username: req.session.username,
-            hasProfilePhoto: req.session.hasProfilePhoto
+            hasProfilePhoto: req.session.hasProfilePhoto,
+            userID: req.session.userID
         });
     }
 
@@ -87,8 +88,35 @@ router.post('/deleteReview', (req, res) => {
                 }
             })
         .then(rowDeleted =>{
-            if(rowDeleted == 1)
-            res.json("success")
+            if(rowDeleted == 1){
+                res.json("success")
+            }
+            
+        })
+
+})
+router.post('/deleteAccount', (req, res) => {
+    console.log(req.session.userID);
+            db.reviews.destroy({
+                where:{
+                    authorID: req.body.userID
+                }
+            })
+        .then(rowDeleted =>{
+            db.users.destroy({
+                where:{
+                    id: req.body.userID
+                }
+            }).then(userDeleted =>{
+                console.log(`user ${req.body.userID} has been deleted`);
+                req.session.destroy();
+                res.json("success")
+                
+                // res.redirect('/');
+                
+            })
+
+            // res.json("success")
         })
 
 })
