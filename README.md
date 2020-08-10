@@ -30,9 +30,9 @@ https://github.com/dgelok
 <b>Role:</b> Project management and back-end support. Authentication, database setup and management, and design.
 
 
-</br>
-</br>
-</br>
+<br>
+<br>
+
 
 <h1><u>Tools used in the project:</u></h1>
 <h3>Languages:</h3>
@@ -72,7 +72,7 @@ https://github.com/dgelok
     <li>Spotify API - https://developer.spotify.com/documentation/web-api/</li>
 </ul
 
-</br>
+<br>
 
 <h1><u>Base Objectives:</u></h1>
 <ul>
@@ -85,15 +85,11 @@ https://github.com/dgelok
     <li>Team goals: increased communication, smoother version control, more independent development</li>
 </ul>
 
-</br>
-
 <h3><u>Stretch Goals Completed:</u></h3>
 <ul>
     <li>Users can upload a personal photo to their profile</li>
     <li>Users can listen to 30-second snippets of album tracks via Spotify API - or full tracks, if signed in through Spotify</li>
 </ul>
-
-</br>
 
 <h3><u>Stretch Goals Future</u></h3>
 <ul>
@@ -106,9 +102,9 @@ https://github.com/dgelok
     <li>Place users with highest num of reviews on landing page</li>
 </ul>
 
-</br>
+<br>
 
-<h2><u>Challenges & Solutions:</u><h2>
+<h1><u>Challenges & Solutions:</u><h1>
 <h3>Some of the biggest challenges we faced with this project build included:</h2>
 
 <b>Challenge: Simultaneous DB/API calls</b>
