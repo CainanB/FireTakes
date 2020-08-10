@@ -9,6 +9,9 @@
 
 </br>
 
+<img src="public/images/LandingDemo.png">
+<img src="public/images/AlbumDemo.png">
+<img src="public/images/SearchDemo.png">
 <h2><u>Meet Team Cannon!</u></h2>
 
 <h3>Cainan Barboza</h3>
@@ -52,7 +55,6 @@ Modules (for Node.js):
     <li>pg</li>
     <li>pg-hstore</li>
 </ul>
-
 
 Other:
 <ul>
