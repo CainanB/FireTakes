@@ -109,19 +109,19 @@ https://github.com/dgelok
 
 <b>Challenge: Simultaneous DB/API calls</b>
 <br>
-<b>Solution: Refactoring code allowed us to store necessary API data in our database, making only a single call necessary, instead of an initial call to our database and then a followup call to the Spotify API.</b>
+<p>Solution: Refactoring code allowed us to store necessary API data in our database, making only a single call necessary, instead of an initial call to our database and then a followup call to the Spotify API.</p>
 
 <b>Challenge: More advanced design (compared to earlier projects)</b>
 <br>
-<b>Solution: Additional CSS development provided animations, working with GIMP provided a unique logo, and a series of authentication checks changed </b>
+<p>Solution: Additional CSS development provided animations, working with GIMP provided a unique logo, and a series of authentication checks changed </p>
 
 <b>Challenge: Photo uploads</b>
 <br>
-<b>Solution: Research led us to Multer middleware, and documentation research provided the required solution.</b>
+<p>Solution: Research led us to Multer middleware, and documentation research provided the required solution.</p>
 
 <b>Challenge: We got sick</b>
 <br>
-<b>Solution: Naps.</b>
+<p>Solution: Naps.</p>
 
 
 
@@ -311,11 +311,4 @@ const getUserInfo = async () =>{
 
 ```
 </br>
-
-
-
-<h2>Screenshots:</h2>
-<img src="images/loginPage.png">
-<h4>Login and user registration.</h4>
-<br />
 
