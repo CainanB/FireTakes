@@ -12,6 +12,7 @@
 <img src="public/images/LandingDemo.png">
 <img src="public/images/AlbumDemo.png">
 <img src="public/images/SearchDemo.png">
+<img src="public/images/ProfileDemo.png">
 <h2><u>Meet Team Cannon!</u></h2>
 
 <h3>Cainan Barboza</h3>
