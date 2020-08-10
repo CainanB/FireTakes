@@ -16,17 +16,17 @@
 <h2><u>Meet Team Cannon!</u></h2>
 
 <h3>Cainan Barboza</h3>
-https://github.com/CainanB
+https://github.com/CainanB <br>
 <b>Role:</b> Lead back-end organization. API calls, database management, routing, and UI development.
 </br>
 
 <h3>Micah Peterson</h3>
-https://github.com/petersonprojects
+https://github.com/petersonprojects <br>
 <b>Role:</b> Lead UI/UX development. HTML and CSS styling, animations, UI development, and functionality.
 </br>
 
 <h3>Dan Gelok</h3>
-https://github.com/dgelok
+https://github.com/dgelok <br>
 <b>Role:</b> Project management and back-end support. Authentication, database setup and management, and design.
 
 
