@@ -54,7 +54,7 @@ $(()=>{
                 html: `<form id="${review.id}form">
                 <input id="${review.id}hiddenInput" type="hidden" name="albumID" value="${review.id}">
                 <textarea id="${review.id}editedReviewText" name="editedReviewText">${review.text}</textarea>
-                <input class="btn btn-danger editedReviewSubmitButton" type="submit" id="${review.id}">
+                <input class="btn btn-danger editedReviewSubmitButton" value="Submit" type="submit" id="${review.id}">
                 </form>`
             })
             
